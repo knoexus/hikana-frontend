@@ -1,7 +1,5 @@
-const Katakana = () => {
-    return (
-      <div>Katakana</div>
-    )
-  }
-  
-export default Katakana
+import KatakanaTable from '@/components/katakana/KatakanaTable';
+
+const Katakana = () => <KatakanaTable />;
+
+export default Katakana;
