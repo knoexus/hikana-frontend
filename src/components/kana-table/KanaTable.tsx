@@ -1,5 +1,6 @@
 import TableSectionToggler from './partials/TableSectionToggler';
 import TableSection from './partials/TableSection';
+import TableName from './partials/TableName';
 import { KanaTableProps } from './abstractions/KanaTableProps';
 import { TableSectionProvider } from './context/TableSectionContext';
 
@@ -8,8 +9,8 @@ const KanaTable = ({
   kanaTableSectionNames,
 }: KanaTableProps) => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Characters</h1>
+    <div className="container mt-5 p-4 border rounded-2xl shadow-lg inset-0 bg-gradient-to-r from-gray-100 to-blue-100 bg-opacity-75">
+      <TableName name="Characters" />
       <TableSectionProvider>
         <TableSectionToggler kanaTableSectionNames={kanaTableSectionNames} />
         <TableSection kanaCharacters={kanaCharacters} />

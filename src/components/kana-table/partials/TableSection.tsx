@@ -70,7 +70,7 @@ const TableSection = ({ kanaCharacters }: TableSectionProps) => {
   };
 
   return (
-    <table className="w-full table-auto">
+    <table className="w-full table-fixed">
       <tbody>
         {maxRowArray.map((_, mrIdx) => (
           <tr key={mrIdx}>
@@ -80,19 +80,19 @@ const TableSection = ({ kanaCharacters }: TableSectionProps) => {
                   mrIdx,
                   mcIdx,
                 );
-                return characterProps ? (
-                  <td key={mcIdx} className="border">
-                    <div className="flex flex-col border border-pink-800">
-                      <div className="flex-1 border text-center line-height-20">
-                        {characterProps.character}
+                return (
+                  <td key={mcIdx} className="p-1 max-w-min">
+                    {characterProps && (
+                      <div className="flex flex-col p-2 bg-white bg-opacity-50 border rounded-xl">
+                        <div className="flex-1 text-center line-height-20">
+                          {characterProps.character}
+                        </div>
+                        <div className="flex-1 text-center line-height-20 bg-teal-100">
+                          {characterProps.romaji}
+                        </div>
                       </div>
-                      <div className="flex-1 border text-center line-height-20 bg-teal-100">
-                        {characterProps.romaji}
-                      </div>
-                    </div>
+                    )}
                   </td>
-                ) : (
-                  <td key={mcIdx}></td>
                 );
               })(),
             )}
