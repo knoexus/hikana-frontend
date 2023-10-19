@@ -3,12 +3,12 @@
 import { useContext } from 'react';
 import { ComponentProps } from '@/abstractions/ComponentProps';
 import useCompleteProvider from '@/hooks/context/useCompleteProvider';
-import CompleteContextFactory from '@/utilities/context/completeContextFactory';
+import CompleteContextFactory from '@/utilities/context/factory';
 
 const initialValue: string[] = [];
 
 const [SelectedKanaCharactersContext, SelectedKanaCharactersUpdateContext] =
-  CompleteContextFactory.create(initialValue);
+  CompleteContextFactory.createCompleteContext(initialValue);
 
 export const useSelectedKanaCharacters = () =>
   useContext(SelectedKanaCharactersContext);

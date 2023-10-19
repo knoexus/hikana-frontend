@@ -3,12 +3,12 @@
 import { useContext } from 'react';
 import { ComponentProps } from '@/abstractions/ComponentProps';
 import useCompleteProvider from '@/hooks/context/useCompleteProvider';
-import CompleteContextFactory from '@/utilities/context/completeContextFactory';
+import CompleteContextFactory from '@/utilities/context/factory';
 
 const initialValue = 'Base';
 
 const [TableSectionContext, TableSectionUpdateContext] =
-  CompleteContextFactory.create(initialValue);
+  CompleteContextFactory.createCompleteContext(initialValue);
 
 export const useTableSection = () => useContext(TableSectionContext);
 export const useTableSectionUpdate = () =>

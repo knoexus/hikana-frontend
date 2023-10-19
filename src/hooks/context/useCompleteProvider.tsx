@@ -6,7 +6,7 @@ import { ComponentProps } from '@/abstractions/ComponentProps';
 interface UseCompleteProviderProps<T> extends ComponentProps {
   initialValue: T;
   valueContext: Context<T>;
-  valueUpdateContext: Context<Dispatch<SetStateAction<T>> | null>;
+  valueUpdateContext?: Context<Dispatch<SetStateAction<T>> | null>;
 }
 
 /**
@@ -14,17 +14,21 @@ interface UseCompleteProviderProps<T> extends ComponentProps {
  */
 const useCompleteProvider = <T extends unknown>({
   initialValue,
+  children,
   valueContext: ValueContext,
   valueUpdateContext: ValueUpdateContext,
-  children,
 }: UseCompleteProviderProps<T>) => {
   const [value, setValue] = useState<T>(initialValue);
 
   return (
     <ValueContext.Provider value={value}>
-      <ValueUpdateContext.Provider value={setValue}>
-        {children}
-      </ValueUpdateContext.Provider>
+      {ValueUpdateContext ? (
+        <ValueUpdateContext.Provider value={setValue}>
+          {children}
+        </ValueUpdateContext.Provider>
+      ) : (
+        children
+      )}
     </ValueContext.Provider>
   );
 };
