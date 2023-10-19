@@ -1,32 +1,23 @@
 'use client';
 
-import { TableSection } from '@/abstractions/KanaCharacterDescription';
-import {
-  useContext,
-  useState,
-  createContext,
-  Dispatch,
-  SetStateAction,
-} from 'react';
+import { useContext } from 'react';
 import { ComponentProps } from '@/abstractions/ComponentProps';
+import useCompleteProvider from '@/hooks/context/useCompleteProvider';
+import CompleteContextFactory from '@/utilities/context/completeContextFactory';
 
-export const TableSectionContext = createContext<TableSection | null>(null);
-export const TableSectionUpdateContext = createContext<Dispatch<
-  SetStateAction<TableSection>
-> | null>(null);
+const initialValue = 'Base';
+
+const [TableSectionContext, TableSectionUpdateContext] =
+  CompleteContextFactory.create(initialValue);
 
 export const useTableSection = () => useContext(TableSectionContext);
 export const useTableSectionUpdate = () =>
   useContext(TableSectionUpdateContext);
 
-export const TableSectionProvider = ({ children }: ComponentProps) => {
-  const [tableSection, setTableSection] = useState<TableSection>('Base');
-
-  return (
-    <TableSectionContext.Provider value={tableSection}>
-      <TableSectionUpdateContext.Provider value={setTableSection}>
-        {children}
-      </TableSectionUpdateContext.Provider>
-    </TableSectionContext.Provider>
-  );
-};
+export const TableSectionProvider = ({ children }: ComponentProps) =>
+  useCompleteProvider({
+    initialValue,
+    valueContext: TableSectionContext,
+    valueUpdateContext: TableSectionUpdateContext,
+    children,
+  });
