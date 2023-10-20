@@ -1,693 +1,704 @@
-import { HiraganaCharacter } from '@/abstractions/KanaCharacterDescription';
+import {
+  BaseKanaTableCharacter,
+  KanaTableCharacter,
+} from '@/abstractions/KanaCharacter';
 
-export const hiraganaCharacters: { [key: string]: HiraganaCharacter } = {
-  あ: new HiraganaCharacter({
+export const hiraganaTableCharactersObject: {
+  [key: string]: BaseKanaTableCharacter;
+} = {
+  あ: {
     romaji: 'a',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 0 },
     },
-  }),
-  い: new HiraganaCharacter({
+  },
+  い: {
     romaji: 'i',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 0 },
     },
-  }),
-  う: new HiraganaCharacter({
+  },
+  う: {
     romaji: 'u',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 0 },
     },
-  }),
-  え: new HiraganaCharacter({
+  },
+  え: {
     romaji: 'e',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 0 },
     },
-  }),
-  お: new HiraganaCharacter({
+  },
+  お: {
     romaji: 'o',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 0 },
     },
-  }),
-  か: new HiraganaCharacter({
+  },
+  か: {
     romaji: 'ka',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 1 },
     },
-  }),
-  き: new HiraganaCharacter({
+  },
+  き: {
     romaji: 'ki',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 1 },
     },
-  }),
-  く: new HiraganaCharacter({
+  },
+  く: {
     romaji: 'ku',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 1 },
     },
-  }),
-  け: new HiraganaCharacter({
+  },
+  け: {
     romaji: 'ke',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 1 },
     },
-  }),
-  こ: new HiraganaCharacter({
+  },
+  こ: {
     romaji: 'ko',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 1 },
     },
-  }),
-  さ: new HiraganaCharacter({
+  },
+  さ: {
     romaji: 'sa',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 2 },
     },
-  }),
-  し: new HiraganaCharacter({
+  },
+  し: {
     romaji: 'shi',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 2 },
     },
-  }),
-  す: new HiraganaCharacter({
+  },
+  す: {
     romaji: 'su',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 2 },
     },
-  }),
-  せ: new HiraganaCharacter({
+  },
+  せ: {
     romaji: 'se',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 2 },
     },
-  }),
-  そ: new HiraganaCharacter({
+  },
+  そ: {
     romaji: 'so',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 2 },
     },
-  }),
-  た: new HiraganaCharacter({
+  },
+  た: {
     romaji: 'ta',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 3 },
     },
-  }),
-  ち: new HiraganaCharacter({
+  },
+  ち: {
     romaji: 'chi',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 3 },
     },
-  }),
-  つ: new HiraganaCharacter({
+  },
+  つ: {
     romaji: 'tsu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 3 },
     },
-  }),
-  て: new HiraganaCharacter({
+  },
+  て: {
     romaji: 'te',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 3 },
     },
-  }),
-  と: new HiraganaCharacter({
+  },
+  と: {
     romaji: 'to',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 3 },
     },
-  }),
-  な: new HiraganaCharacter({
+  },
+  な: {
     romaji: 'na',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 4 },
     },
-  }),
-  に: new HiraganaCharacter({
+  },
+  に: {
     romaji: 'ni',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 4 },
     },
-  }),
-  ぬ: new HiraganaCharacter({
+  },
+  ぬ: {
     romaji: 'nu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 4 },
     },
-  }),
-  ね: new HiraganaCharacter({
+  },
+  ね: {
     romaji: 'ne',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 4 },
     },
-  }),
-  の: new HiraganaCharacter({
+  },
+  の: {
     romaji: 'no',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 4 },
     },
-  }),
-  は: new HiraganaCharacter({
+  },
+  は: {
     romaji: 'ha',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 5 },
     },
-  }),
-  ひ: new HiraganaCharacter({
+  },
+  ひ: {
     romaji: 'hi',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 5 },
     },
-  }),
-  ふ: new HiraganaCharacter({
+  },
+  ふ: {
     romaji: 'fu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 5 },
     },
-  }),
-  へ: new HiraganaCharacter({
+  },
+  へ: {
     romaji: 'he',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 5 },
     },
-  }),
-  ほ: new HiraganaCharacter({
+  },
+  ほ: {
     romaji: 'ho',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 5 },
     },
-  }),
-  ま: new HiraganaCharacter({
+  },
+  ま: {
     romaji: 'ma',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 6 },
     },
-  }),
-  み: new HiraganaCharacter({
+  },
+  み: {
     romaji: 'mi',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 6 },
     },
-  }),
-  む: new HiraganaCharacter({
+  },
+  む: {
     romaji: 'mu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 6 },
     },
-  }),
-  め: new HiraganaCharacter({
+  },
+  め: {
     romaji: 'me',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 6 },
     },
-  }),
-  も: new HiraganaCharacter({
+  },
+  も: {
     romaji: 'mo',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 6 },
     },
-  }),
-  や: new HiraganaCharacter({
+  },
+  や: {
     romaji: 'ya',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 7 },
     },
-  }),
-  ゆ: new HiraganaCharacter({
+  },
+  ゆ: {
     romaji: 'yu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 7 },
     },
-  }),
-  よ: new HiraganaCharacter({
+  },
+  よ: {
     romaji: 'yo',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 7 },
     },
-  }),
-  ら: new HiraganaCharacter({
+  },
+  ら: {
     romaji: 'ra',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 8 },
     },
-  }),
-  り: new HiraganaCharacter({
+  },
+  り: {
     romaji: 'ri',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 8 },
     },
-  }),
-  る: new HiraganaCharacter({
+  },
+  る: {
     romaji: 'ru',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 8 },
     },
-  }),
-  れ: new HiraganaCharacter({
+  },
+  れ: {
     romaji: 're',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 8 },
     },
-  }),
-  ろ: new HiraganaCharacter({
+  },
+  ろ: {
     romaji: 'ro',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 8 },
     },
-  }),
-  わ: new HiraganaCharacter({
+  },
+  わ: {
     romaji: 'wa',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 9 },
     },
-  }),
-  を: new HiraganaCharacter({
+  },
+  を: {
     romaji: 'o',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 9 },
     },
-  }),
-  ん: new HiraganaCharacter({
+  },
+  ん: {
     romaji: 'n',
     tableProps: {
       section: 'Base',
       position: { row: 5, column: 9 },
     },
-  }),
-  が: new HiraganaCharacter({
+  },
+  が: {
     romaji: 'ga',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 0 },
     },
-  }),
-  ぎ: new HiraganaCharacter({
+  },
+  ぎ: {
     romaji: 'gi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 0 },
     },
-  }),
-  ぐ: new HiraganaCharacter({
+  },
+  ぐ: {
     romaji: 'gu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 0 },
     },
-  }),
-  げ: new HiraganaCharacter({
+  },
+  げ: {
     romaji: 'ge',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 0 },
     },
-  }),
-  ご: new HiraganaCharacter({
+  },
+  ご: {
     romaji: 'go',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 0 },
     },
-  }),
-  ざ: new HiraganaCharacter({
+  },
+  ざ: {
     romaji: 'za',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 1 },
     },
-  }),
-  じ: new HiraganaCharacter({
+  },
+  じ: {
     romaji: 'ji',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 1 },
     },
-  }),
-  ず: new HiraganaCharacter({
+  },
+  ず: {
     romaji: 'zu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 1 },
     },
-  }),
-  ぜ: new HiraganaCharacter({
+  },
+  ぜ: {
     romaji: 'ze',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 1 },
     },
-  }),
-  ぞ: new HiraganaCharacter({
+  },
+  ぞ: {
     romaji: 'zo',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 1 },
     },
-  }),
-  だ: new HiraganaCharacter({
+  },
+  だ: {
     romaji: 'da',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 2 },
     },
-  }),
-  ぢ: new HiraganaCharacter({
+  },
+  ぢ: {
     romaji: 'ji',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 2 },
     },
-  }),
-  づ: new HiraganaCharacter({
+  },
+  づ: {
     romaji: 'zu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 2 },
     },
-  }),
-  で: new HiraganaCharacter({
+  },
+  で: {
     romaji: 'de',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 2 },
     },
-  }),
-  ど: new HiraganaCharacter({
+  },
+  ど: {
     romaji: 'do',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 2 },
     },
-  }),
-  ば: new HiraganaCharacter({
+  },
+  ば: {
     romaji: 'ba',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 3 },
     },
-  }),
-  び: new HiraganaCharacter({
+  },
+  び: {
     romaji: 'bi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 3 },
     },
-  }),
-  ぶ: new HiraganaCharacter({
+  },
+  ぶ: {
     romaji: 'bu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 3 },
     },
-  }),
-  べ: new HiraganaCharacter({
+  },
+  べ: {
     romaji: 'be',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 3 },
     },
-  }),
-  ぼ: new HiraganaCharacter({
+  },
+  ぼ: {
     romaji: 'bo',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 3 },
     },
-  }),
+  },
 
-  ぱ: new HiraganaCharacter({
+  ぱ: {
     romaji: 'pa',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 4 },
     },
-  }),
-  ぴ: new HiraganaCharacter({
+  },
+  ぴ: {
     romaji: 'pi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 4 },
     },
-  }),
-  ぷ: new HiraganaCharacter({
+  },
+  ぷ: {
     romaji: 'pu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 4 },
     },
-  }),
-  ぺ: new HiraganaCharacter({
+  },
+  ぺ: {
     romaji: 'pe',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 4 },
     },
-  }),
-  ぽ: new HiraganaCharacter({
+  },
+  ぽ: {
     romaji: 'po',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 4 },
     },
-  }),
-  きゃ: new HiraganaCharacter({
+  },
+  きゃ: {
     romaji: 'kya',
     tableProps: { section: 'Double', position: { row: 0, column: 0 } },
-  }),
-  しゃ: new HiraganaCharacter({
+  },
+  しゃ: {
     romaji: 'sha',
     tableProps: { section: 'Double', position: { row: 0, column: 1 } },
-  }),
-  ちゃ: new HiraganaCharacter({
+  },
+  ちゃ: {
     romaji: 'cha',
     tableProps: { section: 'Double', position: { row: 0, column: 2 } },
-  }),
-  にゃ: new HiraganaCharacter({
+  },
+  にゃ: {
     romaji: 'nya',
     tableProps: { section: 'Double', position: { row: 0, column: 3 } },
-  }),
-  ひゃ: new HiraganaCharacter({
+  },
+  ひゃ: {
     romaji: 'hya',
     tableProps: { section: 'Double', position: { row: 0, column: 4 } },
-  }),
-  みゃ: new HiraganaCharacter({
+  },
+  みゃ: {
     romaji: 'mya',
     tableProps: { section: 'Double', position: { row: 0, column: 5 } },
-  }),
-  りゃ: new HiraganaCharacter({
+  },
+  りゃ: {
     romaji: 'rya',
     tableProps: { section: 'Double', position: { row: 0, column: 6 } },
-  }),
+  },
 
-  きゅ: new HiraganaCharacter({
+  きゅ: {
     romaji: 'kyu',
     tableProps: { section: 'Double', position: { row: 1, column: 0 } },
-  }),
-  しゅ: new HiraganaCharacter({
+  },
+  しゅ: {
     romaji: 'shu',
     tableProps: { section: 'Double', position: { row: 1, column: 1 } },
-  }),
-  ちゅ: new HiraganaCharacter({
+  },
+  ちゅ: {
     romaji: 'chu',
     tableProps: { section: 'Double', position: { row: 1, column: 2 } },
-  }),
-  にゅ: new HiraganaCharacter({
+  },
+  にゅ: {
     romaji: 'nyu',
     tableProps: { section: 'Double', position: { row: 1, column: 3 } },
-  }),
-  ひゅ: new HiraganaCharacter({
+  },
+  ひゅ: {
     romaji: 'hyu',
     tableProps: { section: 'Double', position: { row: 1, column: 4 } },
-  }),
-  みゅ: new HiraganaCharacter({
+  },
+  みゅ: {
     romaji: 'myu',
     tableProps: { section: 'Double', position: { row: 1, column: 5 } },
-  }),
-  りゅ: new HiraganaCharacter({
+  },
+  りゅ: {
     romaji: 'ryu',
     tableProps: { section: 'Double', position: { row: 1, column: 6 } },
-  }),
+  },
 
-  きょ: new HiraganaCharacter({
+  きょ: {
     romaji: 'kyo',
     tableProps: { section: 'Double', position: { row: 2, column: 0 } },
-  }),
-  しょ: new HiraganaCharacter({
+  },
+  しょ: {
     romaji: 'sho',
     tableProps: { section: 'Double', position: { row: 2, column: 1 } },
-  }),
-  ちょ: new HiraganaCharacter({
+  },
+  ちょ: {
     romaji: 'cho',
     tableProps: { section: 'Double', position: { row: 2, column: 2 } },
-  }),
-  にょ: new HiraganaCharacter({
+  },
+  にょ: {
     romaji: 'nyo',
     tableProps: { section: 'Double', position: { row: 2, column: 3 } },
-  }),
-  ひょ: new HiraganaCharacter({
+  },
+  ひょ: {
     romaji: 'hyo',
     tableProps: { section: 'Double', position: { row: 2, column: 4 } },
-  }),
-  みょ: new HiraganaCharacter({
+  },
+  みょ: {
     romaji: 'myo',
     tableProps: { section: 'Double', position: { row: 2, column: 5 } },
-  }),
-  りょ: new HiraganaCharacter({
+  },
+  りょ: {
     romaji: 'ryo',
     tableProps: { section: 'Double', position: { row: 2, column: 6 } },
-  }),
-  ぎゃ: new HiraganaCharacter({
+  },
+  ぎゃ: {
     romaji: 'gya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 0 },
     },
-  }),
-  じゃ: new HiraganaCharacter({
+  },
+  じゃ: {
     romaji: 'ja',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 1 },
     },
-  }),
-  ぢゃ: new HiraganaCharacter({
+  },
+  ぢゃ: {
     romaji: 'ja',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 2 },
     },
-  }),
-  びゃ: new HiraganaCharacter({
+  },
+  びゃ: {
     romaji: 'bya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 3 },
     },
-  }),
-  ぴゃ: new HiraganaCharacter({
+  },
+  ぴゃ: {
     romaji: 'pya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 4 },
     },
-  }),
-  ぎゅ: new HiraganaCharacter({
+  },
+  ぎゅ: {
     romaji: 'gyu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 0 },
     },
-  }),
-  じゅ: new HiraganaCharacter({
+  },
+  じゅ: {
     romaji: 'ju',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 1 },
     },
-  }),
-  ぢゅ: new HiraganaCharacter({
+  },
+  ぢゅ: {
     romaji: 'ju',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 2 },
     },
-  }),
-  びゅ: new HiraganaCharacter({
+  },
+  びゅ: {
     romaji: 'byu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 3 },
     },
-  }),
-  ぴゅ: new HiraganaCharacter({
+  },
+  ぴゅ: {
     romaji: 'pyu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 4 },
     },
-  }),
-  ぎょ: new HiraganaCharacter({
+  },
+  ぎょ: {
     romaji: 'gyo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 0 },
     },
-  }),
-  じょ: new HiraganaCharacter({
+  },
+  じょ: {
     romaji: 'jo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 1 },
     },
-  }),
-  ぢょ: new HiraganaCharacter({
+  },
+  ぢょ: {
     romaji: 'jo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 2 },
     },
-  }),
-  びょ: new HiraganaCharacter({
+  },
+  びょ: {
     romaji: 'byo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 3 },
     },
-  }),
-  ぴょ: new HiraganaCharacter({
+  },
+  ぴょ: {
     romaji: 'pyo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 4 },
     },
-  }),
+  },
 };
+
+export const hiraganaTableCharactersArray: KanaTableCharacter[] =
+  Object.entries(hiraganaTableCharactersObject).map(([kana, rest]) => ({
+    kana,
+    ...rest,
+  }));

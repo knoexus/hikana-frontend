@@ -1,901 +1,912 @@
-import { KatakanaCharacter } from '@/abstractions/KanaCharacterDescription';
+import {
+  BaseKanaTableCharacter,
+  KanaTableCharacter,
+} from '@/abstractions/KanaCharacter';
 
-export const katakanaCharacters = {
-  ア: new KatakanaCharacter({
+export const katakanaTableCharactersObject: {
+  [key: string]: BaseKanaTableCharacter;
+} = {
+  ア: {
     romaji: 'a',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 0 },
     },
-  }),
-  イ: new KatakanaCharacter({
+  },
+  イ: {
     romaji: 'i',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 0 },
     },
-  }),
-  ウ: new KatakanaCharacter({
+  },
+  ウ: {
     romaji: 'u',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 0 },
     },
-  }),
-  エ: new KatakanaCharacter({
+  },
+  エ: {
     romaji: 'e',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 0 },
     },
-  }),
-  オ: new KatakanaCharacter({
+  },
+  オ: {
     romaji: 'o',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 0 },
     },
-  }),
-  カ: new KatakanaCharacter({
+  },
+  カ: {
     romaji: 'ka',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 1 },
     },
-  }),
-  キ: new KatakanaCharacter({
+  },
+  キ: {
     romaji: 'ki',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 1 },
     },
-  }),
-  ク: new KatakanaCharacter({
+  },
+  ク: {
     romaji: 'ku',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 1 },
     },
-  }),
-  ケ: new KatakanaCharacter({
+  },
+  ケ: {
     romaji: 'ke',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 1 },
     },
-  }),
-  コ: new KatakanaCharacter({
+  },
+  コ: {
     romaji: 'ko',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 1 },
     },
-  }),
-  サ: new KatakanaCharacter({
+  },
+  サ: {
     romaji: 'sa',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 2 },
     },
-  }),
-  シ: new KatakanaCharacter({
+  },
+  シ: {
     romaji: 'shi',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 2 },
     },
-  }),
-  ス: new KatakanaCharacter({
+  },
+  ス: {
     romaji: 'su',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 2 },
     },
-  }),
-  セ: new KatakanaCharacter({
+  },
+  セ: {
     romaji: 'se',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 2 },
     },
-  }),
-  ソ: new KatakanaCharacter({
+  },
+  ソ: {
     romaji: 'so',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 2 },
     },
-  }),
-  タ: new KatakanaCharacter({
+  },
+  タ: {
     romaji: 'ta',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 3 },
     },
-  }),
-  チ: new KatakanaCharacter({
+  },
+  チ: {
     romaji: 'chi',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 3 },
     },
-  }),
-  ツ: new KatakanaCharacter({
+  },
+  ツ: {
     romaji: 'tsu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 3 },
     },
-  }),
-  テ: new KatakanaCharacter({
+  },
+  テ: {
     romaji: 'te',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 3 },
     },
-  }),
-  ト: new KatakanaCharacter({
+  },
+  ト: {
     romaji: 'to',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 3 },
     },
-  }),
-  ナ: new KatakanaCharacter({
+  },
+  ナ: {
     romaji: 'na',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 4 },
     },
-  }),
-  ニ: new KatakanaCharacter({
+  },
+  ニ: {
     romaji: 'ni',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 4 },
     },
-  }),
-  ヌ: new KatakanaCharacter({
+  },
+  ヌ: {
     romaji: 'nu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 4 },
     },
-  }),
-  ネ: new KatakanaCharacter({
+  },
+  ネ: {
     romaji: 'ne',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 4 },
     },
-  }),
-  ノ: new KatakanaCharacter({
+  },
+  ノ: {
     romaji: 'no',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 4 },
     },
-  }),
-  ハ: new KatakanaCharacter({
+  },
+  ハ: {
     romaji: 'ha',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 5 },
     },
-  }),
-  ヒ: new KatakanaCharacter({
+  },
+  ヒ: {
     romaji: 'hi',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 5 },
     },
-  }),
-  フ: new KatakanaCharacter({
+  },
+  フ: {
     romaji: 'fu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 5 },
     },
-  }),
-  ヘ: new KatakanaCharacter({
+  },
+  ヘ: {
     romaji: 'he',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 5 },
     },
-  }),
-  ホ: new KatakanaCharacter({
+  },
+  ホ: {
     romaji: 'ho',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 5 },
     },
-  }),
-  マ: new KatakanaCharacter({
+  },
+  マ: {
     romaji: 'ma',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 6 },
     },
-  }),
-  ミ: new KatakanaCharacter({
+  },
+  ミ: {
     romaji: 'mi',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 6 },
     },
-  }),
-  ム: new KatakanaCharacter({
+  },
+  ム: {
     romaji: 'mu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 6 },
     },
-  }),
-  メ: new KatakanaCharacter({
+  },
+  メ: {
     romaji: 'me',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 6 },
     },
-  }),
-  モ: new KatakanaCharacter({
+  },
+  モ: {
     romaji: 'mo',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 6 },
     },
-  }),
-  ヤ: new KatakanaCharacter({
+  },
+  ヤ: {
     romaji: 'ya',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 7 },
     },
-  }),
-  ユ: new KatakanaCharacter({
+  },
+  ユ: {
     romaji: 'yu',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 7 },
     },
-  }),
-  ヨ: new KatakanaCharacter({
+  },
+  ヨ: {
     romaji: 'yo',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 7 },
     },
-  }),
-  ラ: new KatakanaCharacter({
+  },
+  ラ: {
     romaji: 'ra',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 8 },
     },
-  }),
-  リ: new KatakanaCharacter({
+  },
+  リ: {
     romaji: 'ri',
     tableProps: {
       section: 'Base',
       position: { row: 1, column: 8 },
     },
-  }),
-  ル: new KatakanaCharacter({
+  },
+  ル: {
     romaji: 'ru',
     tableProps: {
       section: 'Base',
       position: { row: 2, column: 8 },
     },
-  }),
-  レ: new KatakanaCharacter({
+  },
+  レ: {
     romaji: 're',
     tableProps: {
       section: 'Base',
       position: { row: 3, column: 8 },
     },
-  }),
-  ロ: new KatakanaCharacter({
+  },
+  ロ: {
     romaji: 'ro',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 8 },
     },
-  }),
-  ワ: new KatakanaCharacter({
+  },
+  ワ: {
     romaji: 'wa',
     tableProps: {
       section: 'Base',
       position: { row: 0, column: 9 },
     },
-  }),
-  ヲ: new KatakanaCharacter({
+  },
+  ヲ: {
     romaji: 'o',
     tableProps: {
       section: 'Base',
       position: { row: 4, column: 9 },
     },
-  }),
-  ン: new KatakanaCharacter({
+  },
+  ン: {
     romaji: 'n',
     tableProps: {
       section: 'Base',
       position: { row: 5, column: 9 },
     },
-  }),
-  ガ: new KatakanaCharacter({
+  },
+  ガ: {
     romaji: 'ga',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 0 },
     },
-  }),
-  ギ: new KatakanaCharacter({
+  },
+  ギ: {
     romaji: 'gi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 0 },
     },
-  }),
-  グ: new KatakanaCharacter({
+  },
+  グ: {
     romaji: 'gu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 0 },
     },
-  }),
-  ゲ: new KatakanaCharacter({
+  },
+  ゲ: {
     romaji: 'ge',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 0 },
     },
-  }),
-  ゴ: new KatakanaCharacter({
+  },
+  ゴ: {
     romaji: 'go',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 0 },
     },
-  }),
-  ザ: new KatakanaCharacter({
+  },
+  ザ: {
     romaji: 'za',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 1 },
     },
-  }),
-  ジ: new KatakanaCharacter({
+  },
+  ジ: {
     romaji: 'ji',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 1 },
     },
-  }),
-  ズ: new KatakanaCharacter({
+  },
+  ズ: {
     romaji: 'zu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 1 },
     },
-  }),
-  ゼ: new KatakanaCharacter({
+  },
+  ゼ: {
     romaji: 'ze',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 1 },
     },
-  }),
-  ゾ: new KatakanaCharacter({
+  },
+  ゾ: {
     romaji: 'zo',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 1 },
     },
-  }),
+  },
 
-  ダ: new KatakanaCharacter({
+  ダ: {
     romaji: 'da',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 2 },
     },
-  }),
-  ヂ: new KatakanaCharacter({
+  },
+  ヂ: {
     romaji: 'ji',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 2 },
     },
-  }),
-  ヅ: new KatakanaCharacter({
+  },
+  ヅ: {
     romaji: 'zu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 2 },
     },
-  }),
-  デ: new KatakanaCharacter({
+  },
+  デ: {
     romaji: 'de',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 2 },
     },
-  }),
-  ド: new KatakanaCharacter({
+  },
+  ド: {
     romaji: 'do',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 2 },
     },
-  }),
-  バ: new KatakanaCharacter({
+  },
+  バ: {
     romaji: 'ba',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 3 },
     },
-  }),
-  ビ: new KatakanaCharacter({
+  },
+  ビ: {
     romaji: 'bi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 3 },
     },
-  }),
-  ブ: new KatakanaCharacter({
+  },
+  ブ: {
     romaji: 'bu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 3 },
     },
-  }),
-  ベ: new KatakanaCharacter({
+  },
+  ベ: {
     romaji: 'be',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 3 },
     },
-  }),
-  ボ: new KatakanaCharacter({
+  },
+  ボ: {
     romaji: 'bo',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 3 },
     },
-  }),
-  パ: new KatakanaCharacter({
+  },
+  パ: {
     romaji: 'pa',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 0, column: 4 },
     },
-  }),
-  ピ: new KatakanaCharacter({
+  },
+  ピ: {
     romaji: 'pi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 1, column: 4 },
     },
-  }),
-  プ: new KatakanaCharacter({
+  },
+  プ: {
     romaji: 'pu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 2, column: 4 },
     },
-  }),
-  ペ: new KatakanaCharacter({
+  },
+  ペ: {
     romaji: 'pe',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 3, column: 4 },
     },
-  }),
-  ポ: new KatakanaCharacter({
+  },
+  ポ: {
     romaji: 'po',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
       position: { row: 4, column: 4 },
     },
-  }),
-  キャ: new KatakanaCharacter({
+  },
+  キャ: {
     romaji: 'kya',
     tableProps: { section: 'Double', position: { row: 0, column: 0 } },
-  }),
-  シャ: new KatakanaCharacter({
+  },
+  シャ: {
     romaji: 'sha',
     tableProps: { section: 'Double', position: { row: 0, column: 1 } },
-  }),
-  チャ: new KatakanaCharacter({
+  },
+  チャ: {
     romaji: 'cha',
     tableProps: { section: 'Double', position: { row: 0, column: 2 } },
-  }),
-  ニャ: new KatakanaCharacter({
+  },
+  ニャ: {
     romaji: 'nya',
     tableProps: { section: 'Double', position: { row: 0, column: 3 } },
-  }),
-  ヒャ: new KatakanaCharacter({
+  },
+  ヒャ: {
     romaji: 'hya',
     tableProps: { section: 'Double', position: { row: 0, column: 4 } },
-  }),
-  ミャ: new KatakanaCharacter({
+  },
+  ミャ: {
     romaji: 'mya',
     tableProps: { section: 'Double', position: { row: 0, column: 5 } },
-  }),
-  リャ: new KatakanaCharacter({
+  },
+  リャ: {
     romaji: 'rya',
     tableProps: { section: 'Double', position: { row: 0, column: 6 } },
-  }),
-  キュ: new KatakanaCharacter({
+  },
+  キュ: {
     romaji: 'kyu',
     tableProps: { section: 'Double', position: { row: 1, column: 0 } },
-  }),
-  シュ: new KatakanaCharacter({
+  },
+  シュ: {
     romaji: 'shu',
     tableProps: { section: 'Double', position: { row: 1, column: 1 } },
-  }),
-  チュ: new KatakanaCharacter({
+  },
+  チュ: {
     romaji: 'chu',
     tableProps: { section: 'Double', position: { row: 1, column: 2 } },
-  }),
-  ニュ: new KatakanaCharacter({
+  },
+  ニュ: {
     romaji: 'nyu',
     tableProps: { section: 'Double', position: { row: 1, column: 3 } },
-  }),
-  ヒュ: new KatakanaCharacter({
+  },
+  ヒュ: {
     romaji: 'hyu',
     tableProps: { section: 'Double', position: { row: 1, column: 4 } },
-  }),
-  ミュ: new KatakanaCharacter({
+  },
+  ミュ: {
     romaji: 'myu',
     tableProps: { section: 'Double', position: { row: 1, column: 5 } },
-  }),
-  リュ: new KatakanaCharacter({
+  },
+  リュ: {
     romaji: 'ryu',
     tableProps: { section: 'Double', position: { row: 1, column: 6 } },
-  }),
-  キョ: new KatakanaCharacter({
+  },
+  キョ: {
     romaji: 'kyo',
     tableProps: { section: 'Double', position: { row: 2, column: 0 } },
-  }),
-  ショ: new KatakanaCharacter({
+  },
+  ショ: {
     romaji: 'sho',
     tableProps: { section: 'Double', position: { row: 2, column: 1 } },
-  }),
-  チョ: new KatakanaCharacter({
+  },
+  チョ: {
     romaji: 'cho',
     tableProps: { section: 'Double', position: { row: 2, column: 2 } },
-  }),
-  ニョ: new KatakanaCharacter({
+  },
+  ニョ: {
     romaji: 'nyo',
     tableProps: { section: 'Double', position: { row: 2, column: 3 } },
-  }),
-  ヒョ: new KatakanaCharacter({
+  },
+  ヒョ: {
     romaji: 'hyo',
     tableProps: { section: 'Double', position: { row: 2, column: 4 } },
-  }),
-  ミョ: new KatakanaCharacter({
+  },
+  ミョ: {
     romaji: 'myo',
     tableProps: { section: 'Double', position: { row: 2, column: 5 } },
-  }),
-  リョ: new KatakanaCharacter({
+  },
+  リョ: {
     romaji: 'ryo',
     tableProps: { section: 'Double', position: { row: 2, column: 6 } },
-  }),
-  ギャ: new KatakanaCharacter({
+  },
+  ギャ: {
     romaji: 'gya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 0 },
     },
-  }),
-  ジャ: new KatakanaCharacter({
+  },
+  ジャ: {
     romaji: 'ja',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 1 },
     },
-  }),
-  ヂャ: new KatakanaCharacter({
+  },
+  ヂャ: {
     romaji: 'ja',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 2 },
     },
-  }),
-  ビャ: new KatakanaCharacter({
+  },
+  ビャ: {
     romaji: 'bya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 3 },
     },
-  }),
-  ピャ: new KatakanaCharacter({
+  },
+  ピャ: {
     romaji: 'pya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 0, column: 4 },
     },
-  }),
-  ギュ: new KatakanaCharacter({
+  },
+  ギュ: {
     romaji: 'gyu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 0 },
     },
-  }),
-  ジュ: new KatakanaCharacter({
+  },
+  ジュ: {
     romaji: 'ju',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 1 },
     },
-  }),
-  ヂュ: new KatakanaCharacter({
+  },
+  ヂュ: {
     romaji: 'ju',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 2 },
     },
-  }),
-  ビュ: new KatakanaCharacter({
+  },
+  ビュ: {
     romaji: 'byu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 3 },
     },
-  }),
-  ピュ: new KatakanaCharacter({
+  },
+  ピュ: {
     romaji: 'pyu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 1, column: 4 },
     },
-  }),
-  ギョ: new KatakanaCharacter({
+  },
+  ギョ: {
     romaji: 'gyo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 0 },
     },
-  }),
-  ジョ: new KatakanaCharacter({
+  },
+  ジョ: {
     romaji: 'jo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 1 },
     },
-  }),
-  ヂョ: new KatakanaCharacter({
+  },
+  ヂョ: {
     romaji: 'jo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 2 },
     },
-  }),
-  ビョ: new KatakanaCharacter({
+  },
+  ビョ: {
     romaji: 'byo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 3 },
     },
-  }),
-  ピョ: new KatakanaCharacter({
+  },
+  ピョ: {
     romaji: 'pyo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
       position: { row: 2, column: 4 },
     },
-  }),
-  イェ: new KatakanaCharacter({
+  },
+  イェ: {
     romaji: 'ye',
     tableProps: {
       section: 'Extended',
       position: { row: 3, column: 0 },
     },
-  }),
-  ウィ: new KatakanaCharacter({
+  },
+  ウィ: {
     romaji: 'wi',
     tableProps: {
       section: 'Extended',
       position: { row: 1, column: 1 },
     },
-  }),
-  ウェ: new KatakanaCharacter({
+  },
+  ウェ: {
     romaji: 'we',
     tableProps: {
       section: 'Extended',
       position: { row: 3, column: 1 },
     },
-  }),
-  ウォ: new KatakanaCharacter({
+  },
+  ウォ: {
     romaji: 'wo',
     tableProps: {
       section: 'Extended',
       position: { row: 4, column: 1 },
     },
-  }),
-  シェ: new KatakanaCharacter({
+  },
+  シェ: {
     romaji: 'she',
     tableProps: {
       section: 'Extended',
       position: { row: 3, column: 2 },
     },
-  }),
-  チェ: new KatakanaCharacter({
+  },
+  チェ: {
     romaji: 'che',
     tableProps: {
       section: 'Extended',
       position: { row: 3, column: 3 },
     },
-  }),
-  ティ: new KatakanaCharacter({
+  },
+  ティ: {
     romaji: 'ti',
     tableProps: {
       section: 'Extended',
       position: { row: 1, column: 4 },
     },
-  }),
-  トゥ: new KatakanaCharacter({
+  },
+  トゥ: {
     romaji: 'tu',
     tableProps: {
       section: 'Extended',
       position: { row: 2, column: 4 },
     },
-  }),
-  ツァ: new KatakanaCharacter({
+  },
+  ツァ: {
     romaji: 'tsa',
     tableProps: {
       section: 'Extended',
       position: { row: 0, column: 5 },
     },
-  }),
-  ツィ: new KatakanaCharacter({
+  },
+  ツィ: {
     romaji: 'tsi',
     tableProps: {
       section: 'Extended',
       position: { row: 1, column: 5 },
     },
-  }),
-  ツェ: new KatakanaCharacter({
+  },
+  ツェ: {
     romaji: 'tse',
     tableProps: {
       section: 'Extended',
       position: { row: 3, column: 5 },
     },
-  }),
-  ツォ: new KatakanaCharacter({
+  },
+  ツォ: {
     romaji: 'tso',
     tableProps: {
       section: 'Extended',
       position: { row: 4, column: 5 },
     },
-  }),
-  ファ: new KatakanaCharacter({
+  },
+  ファ: {
     romaji: 'fa',
     tableProps: {
       section: 'Extended',
       position: { row: 0, column: 6 },
     },
-  }),
-  フィ: new KatakanaCharacter({
+  },
+  フィ: {
     romaji: 'fi',
     tableProps: {
       section: 'Extended',
       position: { row: 1, column: 6 },
     },
-  }),
-  フェ: new KatakanaCharacter({
+  },
+  フェ: {
     romaji: 'fe',
     tableProps: {
       section: 'Extended',
       position: { row: 3, column: 6 },
     },
-  }),
-  フォ: new KatakanaCharacter({
+  },
+  フォ: {
     romaji: 'fo',
     tableProps: {
       section: 'Extended',
       position: { row: 4, column: 6 },
     },
-  }),
-  テュ: new KatakanaCharacter({
+  },
+  テュ: {
     romaji: 'tyu',
     tableProps: {
       section: 'Extended',
       position: { row: 2, column: 7 },
     },
-  }),
-  フュ: new KatakanaCharacter({
+  },
+  フュ: {
     romaji: 'fyu',
     tableProps: {
       section: 'Extended',
       position: { row: 2, column: 8 },
     },
-  }),
-  ヴァ: new KatakanaCharacter({
+  },
+  ヴァ: {
     romaji: 'va',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 0, column: 1 },
     },
-  }),
-  ヴィ: new KatakanaCharacter({
+  },
+  ヴィ: {
     romaji: 'vi',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 1, column: 1 },
     },
-  }),
-  ヴ: new KatakanaCharacter({
+  },
+  ヴ: {
     romaji: 'vu',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 2, column: 1 },
     },
-  }),
-  ヴェ: new KatakanaCharacter({
+  },
+  ヴェ: {
     romaji: 've',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 3, column: 1 },
     },
-  }),
-  ヴォ: new KatakanaCharacter({
+  },
+  ヴォ: {
     romaji: 'vo',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 4, column: 1 },
     },
-  }),
-  ジェ: new KatakanaCharacter({
+  },
+  ジェ: {
     romaji: 'je',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 3, column: 2 },
     },
-  }),
-  ディ: new KatakanaCharacter({
+  },
+  ディ: {
     romaji: 'di',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 1, column: 4 },
     },
-  }),
-  ドゥ: new KatakanaCharacter({
+  },
+  ドゥ: {
     romaji: 'du',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 2, column: 4 },
     },
-  }),
-  ヴャ: new KatakanaCharacter({
+  },
+  ヴャ: {
     romaji: 'vya',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 0, column: 6 },
     },
-  }),
-  ヴュ: new KatakanaCharacter({
+  },
+  ヴュ: {
     romaji: 'vyu',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 2, column: 6 },
     },
-  }),
-  ヴョ: new KatakanaCharacter({
+  },
+  ヴョ: {
     romaji: 'vyo',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 4, column: 6 },
     },
-  }),
-  デュ: new KatakanaCharacter({
+  },
+  デュ: {
     romaji: 'dyu',
     tableProps: {
       section: 'Extented Dakuten / Handakuten',
       position: { row: 2, column: 7 },
     },
-  }),
+  },
 };
+
+export const katakanaTableCharactersArray: KanaTableCharacter[] =
+  Object.entries(katakanaTableCharactersObject).map(([kana, rest]) => ({
+    kana,
+    ...rest,
+  }));

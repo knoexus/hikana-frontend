@@ -4,7 +4,7 @@ import {
   useTableSection,
   useTableSectionUpdate,
 } from '../context/TableSectionContext';
-import { TableSection } from '@/abstractions/KanaCharacterDescription';
+import { TableSection } from '@/abstractions/KanaCharacter';
 import { MouseEvent } from 'react';
 import { TableSectionTogglerProps } from '../abstractions/KanaTableProps';
 
@@ -23,13 +23,13 @@ const TableSectionToggler = ({
   };
 
   return (
-    <div className="inline-flex">
+    <div className="inline-flex [&>*:not(:first-child)]:ml-2">
       {kanaTableSectionNames.map((_tableSection: string, idx: number) => (
         <button
           onClick={(e) => onTableSectionClick(e, _tableSection as TableSection)}
-          className={`ml-2 ${
-            tableSection !== _tableSection && 'bg-gray-100'
-          } border`}
+          className={`${
+            tableSection === _tableSection && 'bg-gray-300'
+          } border rounded-xl px-2 py-1`}
           key={idx}
         >
           {_tableSection}

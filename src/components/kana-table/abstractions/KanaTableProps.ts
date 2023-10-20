@@ -1,11 +1,17 @@
-import { KanaCharacterDescription } from '../../../abstractions/KanaCharacterDescription';
+import { KanaTableCharacter } from '@/abstractions/KanaCharacter';
 
 export type TableSectionTogglerProps = {
   kanaTableSectionNames: string[];
 };
 
 export type TableSectionProps = {
-  kanaCharacters: { [key: string]: KanaCharacterDescription };
+  kanaTableCharactersArray: KanaTableCharacter[];
 };
 
 export type KanaTableProps = TableSectionTogglerProps & TableSectionProps;
+
+export type TableSectionCharactersProps = {
+  rowInitializer: null[];
+  columnInitializer: null[];
+  characters: KanaTableCharacter[];
+};
