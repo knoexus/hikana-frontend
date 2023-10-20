@@ -3,7 +3,7 @@
 
 import { katakanaTableCharactersArray } from '@/constants/characters/katakanaCharacters';
 import { katakanaTableSectionNames } from '@/constants/kanaTable';
-import KanaTable from '../kana-table/KanaTable';
+import KanaTable from './KanaTable';
 
 const KatakanaTable = () => (
   <KanaTable

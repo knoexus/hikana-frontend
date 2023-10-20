@@ -1,4 +1,4 @@
-import KatakanaTable from '@/components/katakana/KatakanaTable';
+import KatakanaTable from '@/components/kana-table/KatakanaTable';
 import GameSettings from '@/components/game-settings/GameSettings';
 import GamePlayButton from '@/components/game-play-button/GamePlayButton';
 

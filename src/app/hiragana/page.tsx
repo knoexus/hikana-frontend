@@ -2,7 +2,7 @@
 
 // import { useKanaFetch } from '@/hooks/data/useKanaFetch';
 // import { Word } from '@/abstractions/Word';
-import HiraganaTable from '@/components/hiragana/HiraganaTable';
+import HiraganaTable from '@/components/kana-table/HiraganaTable';
 import GameSettings from '@/components/game-settings/GameSettings';
 import GamePlayButton from '@/components/game-play-button/GamePlayButton';
 
