@@ -1,25 +1,27 @@
 'use client';
 
-import { ComponentProps } from '@/abstractions/ComponentProps';
-import useCompleteProvider from '@/hooks/context/useCompleteProvider';
+import useCompleteProvider, {
+  ProviderPropsWithChildren,
+} from '@/hooks/context/useCompleteProvider';
 import ContextFactory from '@/utilities/context/contextFactory';
 import UseContextFactory from '@/utilities/context/useContextFactory';
 
-const initialValue = 'Base';
+type ValueType = string;
 
 const [TableSectionContext, TableSectionUpdateContext] =
-  ContextFactory.createCompleteContext(initialValue);
+  ContextFactory.createCompleteContext<ValueType>();
 
 export const [useTableSection, useTableSectionUpdate] =
-  UseContextFactory.createUseCompleteContext(
+  UseContextFactory.createUseCompleteContext<ValueType>(
     TableSectionContext,
     TableSectionUpdateContext,
   );
 
-export const TableSectionProvider = ({ children }: ComponentProps) =>
+export const TableSectionProvider = (
+  props: ProviderPropsWithChildren<ValueType>,
+) =>
   useCompleteProvider({
-    initialValue,
+    props,
     valueContext: TableSectionContext,
     valueUpdateContext: TableSectionUpdateContext,
-    children,
   });

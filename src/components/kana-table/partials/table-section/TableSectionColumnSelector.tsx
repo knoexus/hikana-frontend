@@ -1,15 +1,49 @@
+import { useTableSection } from '../../context/TableSectionContext';
+import { useKanaType } from '../../context/KanaTypeContext';
+import useAppDispatch from '@/hooks/redux/useAppDispatch';
+import useAppSelector from '@/hooks/redux/useAppSelector';
+import { toggleColumnSelection } from '@/redux/features/kanaTableSelectedColumnsSlice';
+import { TableSection } from '@/abstractions/KanaCharacter';
+
 const TableSectionColumnSelector = ({
   columnInitializer,
 }: {
   columnInitializer: null[];
-}) => (
-  <tr>
-    {columnInitializer.map((_, idx) => (
-      <td key={idx}>
-        <input type="checkbox"></input>
-      </td>
-    ))}
-  </tr>
-);
+}) => {
+  const kanaType = useKanaType();
+  const tableSection = useTableSection();
+
+  const dispatch = useAppDispatch();
+  const columnSelection = useAppSelector(
+    (state) =>
+      state.kanaTableSelectedColumnsReducer.value[kanaType!][tableSection!],
+  );
+
+  const handleCheckboxOnChange = (column: number) => {
+    if (kanaType && tableSection) {
+      dispatch(
+        toggleColumnSelection({
+          kanaType,
+          tableSection: tableSection as TableSection,
+          column,
+        }),
+      );
+    }
+  };
+
+  return (
+    <tr>
+      {columnInitializer.map((_, idx) => (
+        <td key={idx}>
+          <input
+            checked={columnSelection[idx]}
+            type="checkbox"
+            onChange={() => handleCheckboxOnChange(idx)}
+          ></input>
+        </td>
+      ))}
+    </tr>
+  );
+};
 
 export default TableSectionColumnSelector;

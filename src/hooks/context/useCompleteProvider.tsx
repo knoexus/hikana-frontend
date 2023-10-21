@@ -1,33 +1,43 @@
 'use client';
 
-import { useState, Dispatch, SetStateAction, Context } from 'react';
-import { ComponentProps } from '@/abstractions/ComponentProps';
+import {
+  useState,
+  Dispatch,
+  SetStateAction,
+  Context,
+  PropsWithChildren,
+} from 'react';
 
-interface UseCompleteProviderProps<T> extends ComponentProps {
+interface ProviderProps<T> {
   initialValue: T;
-  valueContext: Context<T>;
-  valueUpdateContext?: Context<Dispatch<SetStateAction<T>> | null>;
+}
+
+export type ProviderPropsWithChildren<T> = PropsWithChildren<ProviderProps<T>>;
+
+interface UseCompleteProviderProps<T> {
+  props: ProviderPropsWithChildren<T>;
+  valueContext: Context<T | undefined>;
+  valueUpdateContext?: Context<Dispatch<SetStateAction<T>> | undefined>;
 }
 
 /**
  * Use a React Context Provider which provides the value alongside its update function.
  */
 const useCompleteProvider = <T extends unknown>({
-  initialValue,
-  children,
+  props,
   valueContext: ValueContext,
   valueUpdateContext: ValueUpdateContext,
 }: UseCompleteProviderProps<T>) => {
-  const [value, setValue] = useState<T>(initialValue);
+  const [value, setValue] = useState<T>(props.initialValue);
 
   return (
     <ValueContext.Provider value={value}>
       {ValueUpdateContext ? (
         <ValueUpdateContext.Provider value={setValue}>
-          {children}
+          {props.children}
         </ValueUpdateContext.Provider>
       ) : (
-        children
+        props.children
       )}
     </ValueContext.Provider>
   );

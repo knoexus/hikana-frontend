@@ -1,15 +1,17 @@
 'use client';
-// Warning: Only plain objects can be passed to Client Components from Server Components. Classes or other objects with methods are not supported.
 
 import { katakanaTableCharactersArray } from '@/constants/characters/katakanaCharacters';
 import { katakanaTableSectionNames } from '@/constants/kanaTable';
+import { KanaTypeProvider } from './context/KanaTypeContext';
 import KanaTable from './KanaTable';
 
 const KatakanaTable = () => (
-  <KanaTable
-    kanaTableCharactersArray={katakanaTableCharactersArray}
-    kanaTableSectionNames={katakanaTableSectionNames}
-  />
+  <KanaTypeProvider initialValue="katakana">
+    <KanaTable
+      kanaTableCharactersArray={katakanaTableCharactersArray}
+      kanaTableSectionNames={katakanaTableSectionNames}
+    />
+  </KanaTypeProvider>
 );
 
 export default KatakanaTable;
