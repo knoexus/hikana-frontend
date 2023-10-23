@@ -1,4 +1,5 @@
 import { KanaTableCharacter, TableSection } from '@/abstractions/KanaCharacter';
+import { SectionColumnSelection } from '@/redux/features/kanaTableSelectedColumnsSlice';
 
 export const filterBySection = (
   tableSectionCharacters: KanaTableCharacter[],
@@ -42,4 +43,22 @@ export const getCharacterPropsByTableProps = (
         position: { row, column },
       },
     }) => row === tableRow && column === tableColumn,
+  );
+
+export const getKanaCharacterStringsBySectionColumnSelection = (
+  characters: KanaTableCharacter[],
+  sectionColumnSelection: SectionColumnSelection,
+): string[] =>
+  characters.reduce(
+    (acc: string[], { kana, tableProps }: KanaTableCharacter) => {
+      const {
+        section,
+        position: { column },
+      } = tableProps;
+      if (sectionColumnSelection[section][column]) {
+        return [...acc, kana];
+      }
+      return acc;
+    },
+    [],
   );

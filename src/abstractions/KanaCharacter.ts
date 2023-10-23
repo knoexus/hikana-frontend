@@ -7,7 +7,7 @@ interface TablePosition {
 
 export type TableSection = (typeof kanaTableSectionNames)[number];
 
-interface TableProps {
+export interface TableProps {
   section: TableSection;
   position: TablePosition;
 }

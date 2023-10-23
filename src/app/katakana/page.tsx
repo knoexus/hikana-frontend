@@ -1,13 +1,5 @@
-import KatakanaTable from '@/components/kana-table/KatakanaTable';
-import GameSettings from '@/components/game-settings/GameSettings';
-import GamePlayButton from '@/components/game-play-button/GamePlayButton';
+import PreGameSetup from '@/components/pre-game-setup/PreGameSetup';
 
-const Katakana = () => (
-  <>
-    <KatakanaTable />
-    <GameSettings oppositeKana="hiragana" />
-    <GamePlayButton />
-  </>
-);
+const Katakana = () => <PreGameSetup kanaType="katakana" />;
 
 export default Katakana;

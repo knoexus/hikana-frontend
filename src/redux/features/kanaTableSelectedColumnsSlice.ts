@@ -21,7 +21,7 @@ interface ColumnSelectionTogglePayload {
 
 type ColumnSelection = { [key: number]: boolean };
 
-type SectionColumnSelection = { [key: string]: ColumnSelection };
+export type SectionColumnSelection = { [key: string]: ColumnSelection };
 
 const getInitialKanaSubState = (
   kanaTableSectionNames: string[],
