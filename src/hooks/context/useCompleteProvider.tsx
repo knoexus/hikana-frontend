@@ -16,8 +16,8 @@ export type ProviderPropsWithChildren<T> = PropsWithChildren<ProviderProps<T>>;
 
 interface UseCompleteProviderProps<T> {
   props: ProviderPropsWithChildren<T>;
-  valueContext: Context<T | undefined>;
-  valueUpdateContext?: Context<Dispatch<SetStateAction<T>> | undefined>;
+  valueContext: Context<T>;
+  valueUpdateContext?: Context<Dispatch<SetStateAction<T>>>;
 }
 
 /**

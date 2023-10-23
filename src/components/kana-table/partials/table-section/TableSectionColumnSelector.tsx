@@ -16,19 +16,17 @@ const TableSectionColumnSelector = ({
   const dispatch = useAppDispatch();
   const columnSelection = useAppSelector(
     (state) =>
-      state.kanaTableSelectedColumnsReducer.value[kanaType!][tableSection!],
+      state.kanaTableSelectedColumnsReducer.value[kanaType][tableSection],
   );
 
   const handleCheckboxOnChange = (column: number) => {
-    if (kanaType && tableSection) {
-      dispatch(
-        toggleColumnSelection({
-          kanaType,
-          tableSection: tableSection as TableSection,
-          column,
-        }),
-      );
-    }
+    dispatch(
+      toggleColumnSelection({
+        kanaType,
+        tableSection: tableSection as TableSection,
+        column,
+      }),
+    );
   };
 
   return (
