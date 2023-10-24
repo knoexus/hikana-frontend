@@ -4,9 +4,7 @@ import useAppDispatch from '@/hooks/redux/useAppDispatch';
 import { toggleDoSkips } from '@/redux/features/gameSettingsSlice';
 
 const SkipsFieldToggleField = () => {
-  const { doSkips } = useAppSelector(
-    (state) => state.gameSettingsReducer.value,
-  );
+  const { doSkips } = useAppSelector((state) => state.gameSettingsReducer);
   const dispatch = useAppDispatch();
   const onChangeCallback = () => dispatch(toggleDoSkips());
   return (

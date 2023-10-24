@@ -1,9 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: {
-    isOn: false,
-  },
+  isOn: false,
 };
 
 export const game = createSlice({
@@ -13,13 +11,9 @@ export const game = createSlice({
     setGameIsOn: (
       state: typeof initialState,
       action: PayloadAction<boolean>,
-    ) => ({
-      ...state,
-      value: {
-        ...state.value,
-        isOn: action.payload,
-      },
-    }),
+    ) => {
+      state.isOn = action.payload;
+    },
   },
 });
 

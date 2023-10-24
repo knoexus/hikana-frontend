@@ -7,26 +7,20 @@ interface Syllables {
   readonly maxAmount: number;
 }
 
-interface StateValue {
+interface State {
   doCharacterTips: boolean;
   doSkips: boolean;
   syllables: Syllables;
 }
 
-interface State {
-  value: StateValue;
-}
-
 const initialState: State = {
-  value: {
-    doCharacterTips: false,
-    doSkips: false,
-    syllables: {
-      doArbitraryAmount: false,
-      amount: 10,
-      minAmount: 0,
-      maxAmount: 10,
-    },
+  doCharacterTips: false,
+  doSkips: false,
+  syllables: {
+    doArbitraryAmount: false,
+    amount: 10,
+    minAmount: 0,
+    maxAmount: 10,
   },
 };
 
@@ -34,40 +28,19 @@ export const gameSettings = createSlice({
   name: 'gameSettings',
   initialState,
   reducers: {
-    toggleDoCharacterTips: (state: State) => ({
-      ...state,
-      value: {
-        ...state.value,
-        doCharacterTips: !state.value.doCharacterTips,
-      },
-    }),
-    toggleDoSkips: (state: State) => ({
-      ...state,
-      value: {
-        ...state.value,
-        doSkips: !state.value.doSkips,
-      },
-    }),
-    toggleDoArbitraryAmountOfSyllables: (state: State) => ({
-      ...state,
-      value: {
-        ...state.value,
-        syllables: {
-          ...state.value.syllables,
-          doArbitraryAmount: !state.value.syllables.doArbitraryAmount,
-        },
-      },
-    }),
-    setAmountOfSyllables: (state: State, action: PayloadAction<number>) => ({
-      ...state,
-      value: {
-        ...state.value,
-        syllables: {
-          ...state.value.syllables,
-          amount: action.payload,
-        },
-      },
-    }),
+    toggleDoCharacterTips: (state: State) => {
+      state.doCharacterTips = !state.doCharacterTips;
+    },
+    toggleDoSkips: (state: State) => {
+      state.doSkips = !state.doSkips;
+    },
+    toggleDoArbitraryAmountOfSyllables: (state: State) => {
+      const { syllables } = state;
+      syllables.doArbitraryAmount = !syllables.doArbitraryAmount;
+    },
+    setAmountOfSyllables: (state: State, action: PayloadAction<number>) => {
+      state.syllables.amount = action.payload;
+    },
   },
 });
 

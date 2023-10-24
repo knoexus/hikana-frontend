@@ -14,8 +14,7 @@ const TableCell = ({
   const tableSection = useTableSection();
 
   const columnSelection = useAppSelector(
-    (state) =>
-      state.kanaTableSelectedColumnsReducer.value[kanaType!][tableSection!],
+    (state) => state.kanaTableSelectedColumnsReducer[kanaType][tableSection],
   );
 
   const isSelectedCharacter = (key: number) => columnSelection[key];

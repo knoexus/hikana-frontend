@@ -5,7 +5,7 @@ import { toggleDoCharacterTips } from '@/redux/features/gameSettingsSlice';
 
 const CharacterTipsToggleField = () => {
   const { doCharacterTips } = useAppSelector(
-    (state) => state.gameSettingsReducer.value,
+    (state) => state.gameSettingsReducer,
   );
   const dispatch = useAppDispatch();
   const onChangeCallback = () => dispatch(toggleDoCharacterTips());

@@ -9,7 +9,7 @@ import { KanaType } from '@/abstractions/Word';
 import useAppSelector from '@/hooks/redux/useAppSelector';
 
 const PreGameSetup = ({ kanaType }: { kanaType: KanaType }) => {
-  const { isOn: isGameOn } = useAppSelector((state) => state.gameReducer.value);
+  const { isOn: isGameOn } = useAppSelector((state) => state.gameReducer);
   const KanaTable = kanaType === 'hiragana' ? HiraganaTable : KatakanaTable;
   return (
     <>

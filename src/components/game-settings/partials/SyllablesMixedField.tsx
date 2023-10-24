@@ -10,7 +10,7 @@ const SyllablesMixedField = () => {
   const {
     doArbitraryAmount: doArbitrarySyllableAmount,
     amount: syllableAmount,
-  } = useAppSelector((state) => state.gameSettingsReducer.value.syllables);
+  } = useAppSelector((state) => state.gameSettingsReducer.syllables);
   const dispatch = useAppDispatch();
 
   const handleBooleanFieldOnChange = () => {

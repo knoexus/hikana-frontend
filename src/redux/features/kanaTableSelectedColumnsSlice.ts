@@ -53,16 +53,14 @@ const getInitialKanaSubState = (
 };
 
 const initialState = {
-  value: {
-    hiragana: getInitialKanaSubState(
-      hiraganaTableSectionNames,
-      hiraganaTableCharactersArray,
-    ),
-    katakana: getInitialKanaSubState(
-      katakanaTableSectionNames,
-      katakanaTableCharactersArray,
-    ),
-  },
+  hiragana: getInitialKanaSubState(
+    hiraganaTableSectionNames,
+    hiraganaTableCharactersArray,
+  ),
+  katakana: getInitialKanaSubState(
+    katakanaTableSectionNames,
+    katakanaTableCharactersArray,
+  ),
 };
 
 export const kanaCharacters = createSlice({
@@ -74,19 +72,8 @@ export const kanaCharacters = createSlice({
       action: PayloadAction<ColumnSelectionTogglePayload>,
     ) => {
       const { kanaType, tableSection, column } = action.payload;
-      return {
-        ...state,
-        value: {
-          ...state.value,
-          [kanaType]: {
-            ...state.value[kanaType],
-            [tableSection]: {
-              ...state.value[kanaType][tableSection],
-              [column]: !state.value[kanaType][tableSection][column],
-            },
-          },
-        },
-      };
+      const stateTableSection = state[kanaType][tableSection];
+      stateTableSection[column] = !stateTableSection[column];
     },
   },
 });

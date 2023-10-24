@@ -15,8 +15,7 @@ const TableSectionColumnSelector = ({
 
   const dispatch = useAppDispatch();
   const columnSelection = useAppSelector(
-    (state) =>
-      state.kanaTableSelectedColumnsReducer.value[kanaType][tableSection],
+    (state) => state.kanaTableSelectedColumnsReducer[kanaType][tableSection],
   );
 
   const handleCheckboxOnChange = (column: number) => {
