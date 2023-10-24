@@ -1,7 +1,7 @@
 import TableSectionToggler from './partials/TableSectionToggler';
 import TableSection from './partials/table-section/TableSection';
 import TableName from './partials/TableName';
-import { KanaTableProps } from './abstractions/KanaTableProps';
+import { KanaTableProps } from './types/KanaTableProps';
 import { TableSectionProvider } from './context/TableSectionContext';
 
 const KanaTable = ({

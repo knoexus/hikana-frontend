@@ -1,4 +1,4 @@
-import { TableSectionCharactersProps } from '../../abstractions/KanaTableProps';
+import { TableSectionCharactersProps } from '../../types/KanaTableProps';
 import TableCell from './TableCell';
 import { getCharacterPropsByTableProps } from '@/utilities/kanaTableCharacters';
 

@@ -5,7 +5,7 @@ import KatakanaTable from '../kana-table/KatakanaTable';
 import GameSettings from '@/components/game-settings/GameSettings';
 import GamePlayButton from '@/components/game-play-button/GamePlayButton';
 import Game from '../game/Game';
-import { KanaType } from '@/abstractions/Word';
+import { KanaType } from '@/types/Word';
 import useAppSelector from '@/hooks/redux/useAppSelector';
 
 const PreGameSetup = ({ kanaType }: { kanaType: KanaType }) => {

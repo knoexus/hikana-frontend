@@ -1,7 +1,7 @@
 import {
   BaseKanaTableCharacter,
   KanaTableCharacter,
-} from '@/abstractions/KanaCharacter';
+} from '@/types/KanaCharacter';
 
 export const katakanaTableCharactersObject: {
   [key: string]: BaseKanaTableCharacter;

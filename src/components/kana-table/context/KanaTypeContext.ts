@@ -1,6 +1,6 @@
 'use client';
 
-import { KanaType } from '@/abstractions/Word';
+import { KanaType } from '@/types/Word';
 import useCompleteProvider, {
   ProviderPropsWithChildren,
 } from '@/hooks/context/useCompleteProvider';

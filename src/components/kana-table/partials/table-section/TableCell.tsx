@@ -1,4 +1,4 @@
-import { KanaTableCharacter } from '@/abstractions/KanaCharacter';
+import { KanaTableCharacter } from '@/types/KanaCharacter';
 import { useKanaType } from '../../context/KanaTypeContext';
 import { useTableSection } from '../../context/TableSectionContext';
 import useAppSelector from '@/hooks/redux/useAppSelector';

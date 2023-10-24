@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { hiraganaTableCharactersArray } from '@/constants/characters/hiraganaCharacters';
 import { katakanaTableCharactersArray } from '@/constants/characters/katakanaCharacters';
-import { KanaTableCharacter, TableSection } from '@/abstractions/KanaCharacter';
+import { KanaTableCharacter, TableSection } from '@/types/KanaCharacter';
 
 import {
   hiraganaTableSectionNames,
@@ -11,7 +11,7 @@ import {
   filterBySection,
   getMaxRowAndColumn,
 } from '@/utilities/kanaTableCharacters';
-import { KanaType } from '@/abstractions/Word';
+import { KanaType } from '@/types/Word';
 
 interface ColumnSelectionTogglePayload {
   kanaType: KanaType;

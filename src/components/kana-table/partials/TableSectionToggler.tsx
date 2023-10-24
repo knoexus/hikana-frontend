@@ -4,9 +4,9 @@ import {
   useTableSection,
   useTableSectionUpdate,
 } from '../context/TableSectionContext';
-import { TableSection } from '@/abstractions/KanaCharacter';
+import { TableSection } from '@/types/KanaCharacter';
 import { MouseEvent } from 'react';
-import { TableSectionTogglerProps } from '../abstractions/KanaTableProps';
+import { TableSectionTogglerProps } from '../types/KanaTableProps';
 
 const TableSectionToggler = ({
   kanaTableSectionNames,

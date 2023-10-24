@@ -1,6 +1,6 @@
 'use client';
 
-import { TableSectionProps } from '@/components/kana-table/abstractions/KanaTableProps';
+import { TableSectionProps } from '@/components/kana-table/types/KanaTableProps';
 import { useMemo } from 'react';
 import { useTableSection } from '../../context/TableSectionContext';
 import TableSectionColumnSelector from './TableSectionColumnSelector';
@@ -9,7 +9,7 @@ import {
   filterBySection,
   getMaxRowAndColumn,
 } from '@/utilities/kanaTableCharacters';
-import { TableSection } from '@/abstractions/KanaCharacter';
+import { TableSection } from '@/types/KanaCharacter';
 
 const TableSection = ({ kanaTableCharactersArray }: TableSectionProps) => {
   const tableSection = useTableSection();

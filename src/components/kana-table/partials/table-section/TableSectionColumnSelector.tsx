@@ -3,7 +3,7 @@ import { useKanaType } from '../../context/KanaTypeContext';
 import useAppDispatch from '@/hooks/redux/useAppDispatch';
 import useAppSelector from '@/hooks/redux/useAppSelector';
 import { toggleColumnSelection } from '@/redux/features/kanaTableSelectedColumnsSlice';
-import { TableSection } from '@/abstractions/KanaCharacter';
+import { TableSection } from '@/types/KanaCharacter';
 
 const TableSectionColumnSelector = ({
   columnInitializer,

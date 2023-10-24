@@ -1,4 +1,4 @@
-import { KanaTableCharacter } from '@/abstractions/KanaCharacter';
+import { KanaTableCharacter } from '@/types/KanaCharacter';
 
 export type TableSectionTogglerProps = {
   kanaTableSectionNames: string[];
