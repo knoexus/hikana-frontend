@@ -1,5 +1,5 @@
-import hikanaApi from '@/redux/apis/hikanaApi';
-import useAppSelector from '@/hooks/redux/useAppSelector';
+import hikanaApi from '@/state/redux/apis/hikanaApi';
+import useAppSelector from '@/state/redux/hooks/useAppSelector';
 import { getKanaCharacterStringsBySectionColumnSelection } from '@/utilities/kanaTableCharacters';
 import { hiraganaTableCharactersArray } from '@/constants/characters/hiraganaCharacters';
 import { katakanaTableCharactersArray } from '@/constants/characters/katakanaCharacters';

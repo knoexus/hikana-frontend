@@ -1,5 +1,5 @@
 import { KanaTableCharacter, TableSection } from '@/types/KanaCharacter';
-import { SectionColumnSelection } from '@/redux/features/kanaTableSelectedColumnsSlice';
+import { SectionColumnSelection } from '@/state/redux/features/kanaTableSelectedColumnsSlice';
 
 export const filterBySection = (
   tableSectionCharacters: KanaTableCharacter[],

@@ -1,7 +1,7 @@
 'use client';
 
-import useAppDispatch from '@/hooks/redux/useAppDispatch';
-import { setGameIsOn } from '@/redux/features/gameSlice';
+import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
+import { setGameIsOn } from '@/state/redux/features/gameSlice';
 
 const GamePlayButton = () => {
   const dispatch = useAppDispatch();

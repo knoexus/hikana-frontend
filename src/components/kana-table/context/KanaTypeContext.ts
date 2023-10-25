@@ -3,9 +3,9 @@
 import { KanaType } from '@/types/Word';
 import useCompleteProvider, {
   ProviderPropsWithChildren,
-} from '@/hooks/context/useCompleteProvider';
-import ContextFactory from '@/utilities/context/contextFactory';
-import UseContextFactory from '@/utilities/context/useContextFactory';
+} from '@/state/context/hooks/useCompleteProvider';
+import ContextFactory from '@/state/context/factories/contextFactory';
+import UseContextFactory from '@/state/context/factories/useContextFactory';
 
 type ValueType = KanaType;
 

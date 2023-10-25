@@ -1,7 +1,7 @@
 import BooleanToggleField from './fields/BooleanToggleField';
-import useAppSelector from '@/hooks/redux/useAppSelector';
-import useAppDispatch from '@/hooks/redux/useAppDispatch';
-import { toggleDoSkips } from '@/redux/features/gameSettingsSlice';
+import useAppSelector from '@/state/redux/hooks/useAppSelector';
+import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
+import { toggleDoSkips } from '@/state/redux/features/gameSettingsSlice';
 
 const SkipsFieldToggleField = () => {
   const { doSkips } = useAppSelector((state) => state.gameSettingsReducer);

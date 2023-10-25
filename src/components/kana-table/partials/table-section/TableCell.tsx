@@ -1,7 +1,7 @@
 import { KanaTableCharacter } from '@/types/KanaCharacter';
 import { useKanaType } from '../../context/KanaTypeContext';
 import { useTableSection } from '../../context/TableSectionContext';
-import useAppSelector from '@/hooks/redux/useAppSelector';
+import useAppSelector from '@/state/redux/hooks/useAppSelector';
 
 const TableCell = ({
   column,

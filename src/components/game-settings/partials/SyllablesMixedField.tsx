@@ -1,10 +1,10 @@
-import useAppSelector from '@/hooks/redux/useAppSelector';
-import useAppDispatch from '@/hooks/redux/useAppDispatch';
+import useAppSelector from '@/state/redux/hooks/useAppSelector';
+import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
 import OptionalNumericSliderField from './fields/OptionalNumericSliderField';
 import {
   toggleDoArbitraryAmountOfSyllables,
   setAmountOfSyllables,
-} from '@/redux/features/gameSettingsSlice';
+} from '@/state/redux/features/gameSettingsSlice';
 
 const SyllablesMixedField = () => {
   const {

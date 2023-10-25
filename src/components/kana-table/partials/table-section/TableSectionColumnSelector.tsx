@@ -1,8 +1,8 @@
 import { useTableSection } from '../../context/TableSectionContext';
 import { useKanaType } from '../../context/KanaTypeContext';
-import useAppDispatch from '@/hooks/redux/useAppDispatch';
-import useAppSelector from '@/hooks/redux/useAppSelector';
-import { toggleColumnSelection } from '@/redux/features/kanaTableSelectedColumnsSlice';
+import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
+import useAppSelector from '@/state/redux/hooks/useAppSelector';
+import { toggleColumnSelection } from '@/state/redux/features/kanaTableSelectedColumnsSlice';
 import { TableSection } from '@/types/KanaCharacter';
 
 const TableSectionColumnSelector = ({

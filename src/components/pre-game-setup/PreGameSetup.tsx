@@ -6,7 +6,7 @@ import GameSettings from '@/components/game-settings/GameSettings';
 import GamePlayButton from '@/components/game-play-button/GamePlayButton';
 import Game from '../game/Game';
 import { KanaType } from '@/types/Word';
-import useAppSelector from '@/hooks/redux/useAppSelector';
+import useAppSelector from '@/state/redux/hooks/useAppSelector';
 
 const PreGameSetup = ({ kanaType }: { kanaType: KanaType }) => {
   const { isOn: isGameOn } = useAppSelector((state) => state.gameReducer);
