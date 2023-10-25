@@ -1,5 +1,5 @@
 import PreGameSetup from '@/components/pre-game-setup/PreGameSetup';
 
-const Katakana = () => <PreGameSetup kanaType="katakana" />;
+const Katakana = () => <PreGameSetup />;
 
 export default Katakana;

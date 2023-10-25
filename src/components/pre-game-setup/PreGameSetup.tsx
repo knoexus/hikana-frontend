@@ -5,12 +5,13 @@ import KatakanaTable from '../kana-table/KatakanaTable';
 import GameSettings from '@/components/game-settings/GameSettings';
 import GamePlayButton from '@/components/game-play-button/GamePlayButton';
 import Game from '../game/Game';
-import { KanaType } from '@/types/Word';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
+import { useKanaTypeFromPath } from '@/utilities/hooks/useKanaTypeFromPath';
 
-const PreGameSetup = ({ kanaType }: { kanaType: KanaType }) => {
+const PreGameSetup = () => {
   const { isOn: isGameOn } = useAppSelector((state) => state.gameReducer);
-  const KanaTable = kanaType === 'hiragana' ? HiraganaTable : KatakanaTable;
+  const KanaTable =
+    useKanaTypeFromPath() === 'hiragana' ? HiraganaTable : KatakanaTable;
   return (
     <>
       {!isGameOn ? (

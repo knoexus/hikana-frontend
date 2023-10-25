@@ -1,5 +1,5 @@
 import { useTableSection } from '../../context/TableSectionContext';
-import { useKanaType } from '../../context/KanaTypeContext';
+import { useKanaTypeFromPath } from '@/utilities/hooks/useKanaTypeFromPath';
 import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
 import { toggleColumnSelection } from '@/state/redux/features/kanaTableSelectedColumnsSlice';
@@ -10,7 +10,7 @@ const TableSectionColumnSelector = ({
 }: {
   columnInitializer: null[];
 }) => {
-  const kanaType = useKanaType();
+  const kanaType = useKanaTypeFromPath();
   const tableSection = useTableSection();
 
   const dispatch = useAppDispatch();
