@@ -1,10 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { baseApiUrl } from '@/constants/urls';
-import { Word } from '@/types/Word';
+import { KanaType, Word } from '@/types/Word';
 
 interface GetAllWordsQueryParams {
-  kanaType: string;
+  kanaType: KanaType;
   kanaSyllables?: string;
+  minKanaSyllables?: number;
+  maxKanaSyllables?: number;
+  limit?: number;
 }
 
 export default createApi({

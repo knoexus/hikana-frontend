@@ -1,4 +1,4 @@
-import BooleanToggleField from './fields/BooleanToggleField';
+import BooleanToggleField from './generic-fields/BooleanToggleField';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
 import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
 import { toggleDoCharacterTips } from '@/state/redux/features/gameSettingsSlice';
