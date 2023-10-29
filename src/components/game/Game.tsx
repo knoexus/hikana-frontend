@@ -1,41 +1,36 @@
 import hikanaApi from '@/state/redux/apis/hikanaApi';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
+import { useKanaTypeFromPath } from '@/utilities/hooks/useKanaTypeFromPath';
 import { getKanaCharacterStringsBySectionColumnSelection } from '@/utilities/kanaTableCharacters';
-import { hiraganaTableCharactersArray } from '@/constants/characters/hiraganaCharacters';
-import { katakanaTableCharactersArray } from '@/constants/characters/katakanaCharacters';
 import { useMemo } from 'react';
+import LoadedGame from './loaded-game/LoadedGame';
+import Loading from './loading/Loading';
 
 const Game = () => {
+  const kanaType = useKanaTypeFromPath();
   const kanaTableSelection = useAppSelector(
     (state) => state.kanaTableSelectedColumnsReducer.katakana,
   );
+
   const kanaCharacterStrings = useMemo(
     () =>
       getKanaCharacterStringsBySectionColumnSelection(
-        katakanaTableCharactersArray,
+        kanaType,
         kanaTableSelection,
       ),
-    [kanaTableSelection],
+    [kanaType, kanaTableSelection],
   );
 
-  console.log(kanaCharacterStrings.join(','));
-
-  const { data } = hikanaApi.useGetAllWordsQuery({
-    kanaType: 'katakana',
+  const { isLoading, isError, data } = hikanaApi.useGetAllWordsQuery({
+    kanaType,
     ...(kanaCharacterStrings && {
       kanaSyllables: kanaCharacterStrings.join(','),
     }),
   });
-  return (
-    <div>
-      {data?.slice(0, 10).map((word, i) => (
-        <>
-          <span>{word.kana}</span>
-          <br></br>
-        </>
-      ))}
-    </div>
-  );
+
+  if (isLoading) return <Loading />;
+  if (isError) return <div>Error...</div>;
+  if (data) return <LoadedGame words={data} />;
 };
 
 export default Game;
