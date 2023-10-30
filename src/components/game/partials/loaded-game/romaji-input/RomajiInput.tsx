@@ -2,27 +2,17 @@ import { ChangeEvent, KeyboardEvent } from 'react';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
 import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
 import {
-  setIsCurrentWordInputCorrect,
   setCurrentWordInput,
   proceedToNextWord,
 } from '@/state/redux/features/gameSlice';
-import { useWords } from '@/components/game/context/WordsContext';
 
 const RomajiInput = () => {
-  const words = useWords();
   const dispatch = useAppDispatch();
-  const { currentWordIndex, currentWordInput } = useAppSelector(
-    (state) => state.gameReducer,
-  );
+  const { currentWordInput } = useAppSelector((state) => state.gameReducer);
 
   const handleInputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     dispatch(setCurrentWordInput(value));
-    if (value === words[currentWordIndex].romaji) {
-      dispatch(setIsCurrentWordInputCorrect(true));
-    } else {
-      dispatch(setIsCurrentWordInputCorrect(false));
-    }
   };
 
   const handleInputOnKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
