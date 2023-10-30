@@ -1,7 +1,7 @@
 import './GameSettings.css';
 import CharacterTipsToggleField from './fields/CharacterTipsToggleField';
 import HighlightSequencesToggleField from './fields/HighlightSequencesToggleField';
-import SkipsFieldToggleField from './fields/SkipsFieldToggleField';
+import RetryGuessToggleField from './fields/RetryGuessToggleField';
 import WordDifficultyMixedField from './fields/WordDifficultyMixedField';
 
 const GameSettings = () => {
@@ -10,7 +10,7 @@ const GameSettings = () => {
       <h1 className="text-3xl mb-4">Game Settings</h1>
       <CharacterTipsToggleField />
       <HighlightSequencesToggleField />
-      <SkipsFieldToggleField />
+      <RetryGuessToggleField />
       <WordDifficultyMixedField />
     </div>
   );

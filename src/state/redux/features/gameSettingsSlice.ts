@@ -25,14 +25,14 @@ interface WordDifficulty {
 interface State {
   doCharacterTips: boolean;
   shouldHighlightSequences: boolean;
-  doSkips: boolean;
+  doWordGuessRetries: boolean;
   wordDifficulty: WordDifficulty;
 }
 
 const initialState: State = {
   doCharacterTips: false,
   shouldHighlightSequences: false,
-  doSkips: false,
+  doWordGuessRetries: false,
   wordDifficulty: {
     doCustomLevel: false,
     level: 'high',
@@ -50,8 +50,8 @@ export const gameSettings = createSlice({
     toggleShouldHighlightSequences: (state: State) => {
       state.shouldHighlightSequences = !state.shouldHighlightSequences;
     },
-    toggleDoSkips: (state: State) => {
-      state.doSkips = !state.doSkips;
+    toggleDoWordGuessRetries: (state: State) => {
+      state.doWordGuessRetries = !state.doWordGuessRetries;
     },
     toggleDoCustomWordDifficultyLevel: (state: State) => {
       const { wordDifficulty } = state;
@@ -69,7 +69,7 @@ export const gameSettings = createSlice({
 export const {
   toggleDoCharacterTips,
   toggleShouldHighlightSequences,
-  toggleDoSkips,
+  toggleDoWordGuessRetries,
   toggleDoCustomWordDifficultyLevel,
   setWordDifficultyLevel,
 } = gameSettings.actions;

@@ -7,6 +7,7 @@ const initialState = {
   currentWordIndex: 0,
   currentWordInput: '',
   isCurrentWordInputCorrect: false,
+  retriesForCurrentWord: 1,
 };
 
 export const game = createSlice({
@@ -27,6 +28,9 @@ export const game = createSlice({
     },
     setIsCurrentWordInputCorrect: (state, action: PayloadAction<boolean>) => {
       state.isCurrentWordInputCorrect = action.payload;
+    },
+    decrementRetriesForCurrentWord: (state) => {
+      state.retriesForCurrentWord = state.retriesForCurrentWord - 1;
     },
   },
 });
