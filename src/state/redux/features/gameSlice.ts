@@ -9,6 +9,8 @@ const initialState = {
   currentWordInput: '',
   isCurrentWordInputCorrect: false,
   retriesForCurrentWord: 1,
+  correctGuessesCount: 0,
+  incorrectGuessesCount: 0,
 };
 
 export const game = createSlice({
@@ -36,6 +38,12 @@ export const game = createSlice({
     resetRetriesForCurrentWord: (state) => {
       state.retriesForCurrentWord = initialState.retriesForCurrentWord;
     },
+    incrementCorrectGuessesCount: (state) => {
+      state.correctGuessesCount = state.correctGuessesCount + 1;
+    },
+    incrementIncorrectGuessesCount: (state) => {
+      state.incorrectGuessesCount = state.incorrectGuessesCount + 1;
+    },
   },
 });
 
@@ -47,16 +55,17 @@ export const proceedToNextWord =
     const { currentWordIndex, currentWordInput, retriesForCurrentWord } =
       state.gameReducer;
     const { doWordGuessRetries } = state.gameSettingsReducer;
-    if (!(words[currentWordIndex].kana === currentWordInput)) {
+
+    if (!(words[currentWordIndex].romaji === currentWordInput)) {
       if (doWordGuessRetries && retriesForCurrentWord > 0) {
         dispatch(game.actions.decrementRetriesForCurrentWord());
         return;
       }
-      // incrementWrongGuesses()
+      dispatch(game.actions.incrementIncorrectGuessesCount());
       // addWordToTableOfWords(fullWord!!!, 'incorrect')
     } else {
-      // incrementWrongGuesses()
-      // addWordToTableOfWords(fullWord!!!, 'incorrect')
+      dispatch(game.actions.incrementCorrectGuessesCount());
+      // addWordToTableOfWords(fullWord!!!, 'correct')
     }
     dispatch(game.actions.incrementCurrentWordIndex());
     dispatch(game.actions.resetCurrentWordInput());
