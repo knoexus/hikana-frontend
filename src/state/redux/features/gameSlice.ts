@@ -3,7 +3,23 @@ import { ThunkAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 import { getAllWordsCacheSelector } from '../apis/hikanaApi';
 
-const initialState = {
+export interface Guess {
+  input: string;
+  wasCorrect: boolean;
+}
+
+interface State {
+  isOn: boolean;
+  currentWordIndex: number;
+  currentWordInput: string;
+  isCurrentWordInputCorrect: boolean;
+  retriesForCurrentWord: number;
+  correctGuessesCount: number;
+  incorrectGuessesCount: number;
+  guesses: Guess[];
+}
+
+const initialState: State = {
   isOn: false,
   currentWordIndex: 0,
   currentWordInput: '',
@@ -11,6 +27,7 @@ const initialState = {
   retriesForCurrentWord: 1,
   correctGuessesCount: 0,
   incorrectGuessesCount: 0,
+  guesses: [],
 };
 
 export const game = createSlice({
@@ -44,6 +61,9 @@ export const game = createSlice({
     incrementIncorrectGuessesCount: (state) => {
       state.incorrectGuessesCount = state.incorrectGuessesCount + 1;
     },
+    addGuess: (state, action: PayloadAction<Guess>) => {
+      state.guesses.push(action.payload);
+    },
   },
 });
 
@@ -56,17 +76,24 @@ export const proceedToNextWord =
       state.gameReducer;
     const { doWordGuessRetries } = state.gameSettingsReducer;
 
-    if (!(words[currentWordIndex].romaji === currentWordInput)) {
+    const isCurrentWordInputCorrect =
+      words[currentWordIndex].romaji === currentWordInput;
+
+    if (!isCurrentWordInputCorrect) {
       if (doWordGuessRetries && retriesForCurrentWord > 0) {
         dispatch(game.actions.decrementRetriesForCurrentWord());
         return;
       }
       dispatch(game.actions.incrementIncorrectGuessesCount());
-      // addWordToTableOfWords(fullWord!!!, 'incorrect')
     } else {
       dispatch(game.actions.incrementCorrectGuessesCount());
-      // addWordToTableOfWords(fullWord!!!, 'correct')
     }
+    dispatch(
+      game.actions.addGuess({
+        input: currentWordInput,
+        wasCorrect: isCurrentWordInputCorrect,
+      }),
+    );
     dispatch(game.actions.incrementCurrentWordIndex());
     dispatch(game.actions.resetCurrentWordInput());
     dispatch(game.actions.resetRetriesForCurrentWord());
