@@ -1,6 +1,9 @@
+import { useWords } from '@/components/game/context/WordsContext';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
 
-const WordCounter = ({ totalCount }: { totalCount: number }) => {
+const WordCounter = () => {
+  const words = useWords();
+  const totalCount = words.length;
   const currentWordIndex = useAppSelector(
     (state) => state.gameReducer.currentWordIndex,
   );

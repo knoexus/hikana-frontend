@@ -1,12 +1,8 @@
 import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
-import useAppSelector from '@/state/redux/hooks/useAppSelector';
 import { proceedToNextWord } from '@/state/redux/features/gameSlice';
 import { MouseEvent } from 'react';
 
 const NextWordButton = () => {
-  const isCurrentWordInputCorrect = useAppSelector(
-    (state) => state.gameReducer.isCurrentWordInputCorrect,
-  );
   const dispatch = useAppDispatch();
   const handleOnClick = (
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
@@ -16,12 +12,7 @@ const NextWordButton = () => {
   };
 
   return (
-    <button
-      onClick={(e) => handleOnClick(e)}
-      disabled={!isCurrentWordInputCorrect}
-    >
-      Next Word {`${'-->'}`}
-    </button>
+    <button onClick={(e) => handleOnClick(e)}>Next Word {`${'-->'}`}</button>
   );
 };
 

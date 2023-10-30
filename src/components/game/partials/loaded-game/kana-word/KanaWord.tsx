@@ -1,7 +1,8 @@
-import { Word } from '@/types/Word';
+import { useWords } from '@/components/game/context/WordsContext';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
 
-const KanaWord = ({ words }: { words: Word[] }) => {
+const KanaWord = () => {
+  const words = useWords();
   const currentWordIndex = useAppSelector(
     (state) => state.gameReducer.currentWordIndex,
   );

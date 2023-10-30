@@ -4,8 +4,9 @@ import { useKanaTypeFromPath } from '@/utilities/hooks/useKanaTypeFromPath';
 import { getKanaCharacterStringsBySectionColumnSelection } from '@/utilities/kanaTableCharacters';
 import { wordDifficultyToMinMaxKanaCharacters } from '@/constants/wordDifficulty';
 import { useMemo } from 'react';
-import LoadedGame from './loaded-game/LoadedGame';
-import Loading from './loading/Loading';
+import LoadedGame from './partials/loaded-game/LoadedGame';
+import Loading from './partials/loading/Loading';
+import { WordsProvider } from './context/WordsContext';
 
 const Game = () => {
   const kanaType = useKanaTypeFromPath();
@@ -38,7 +39,12 @@ const Game = () => {
 
   if (isLoading) return <Loading />;
   if (isError) return <div>Error...</div>;
-  if (data) return <LoadedGame words={data} />;
+  if (data)
+    return (
+      <WordsProvider initialValue={data}>
+        <LoadedGame />
+      </WordsProvider>
+    );
 };
 
 export default Game;
