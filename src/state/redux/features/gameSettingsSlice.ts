@@ -24,14 +24,14 @@ interface WordDifficulty {
 
 interface State {
   doCharacterTips: boolean;
-  shouldHighlightSequences: boolean;
+  shouldHighlightCorrectSequence: boolean;
   doWordGuessRetries: boolean;
   wordDifficulty: WordDifficulty;
 }
 
 const initialState: State = {
   doCharacterTips: false,
-  shouldHighlightSequences: false,
+  shouldHighlightCorrectSequence: false,
   doWordGuessRetries: false,
   wordDifficulty: {
     doCustomLevel: false,
@@ -47,8 +47,9 @@ export const gameSettings = createSlice({
     toggleDoCharacterTips: (state: State) => {
       state.doCharacterTips = !state.doCharacterTips;
     },
-    toggleShouldHighlightSequences: (state: State) => {
-      state.shouldHighlightSequences = !state.shouldHighlightSequences;
+    toggleShouldHighlightCorrectSequence: (state: State) => {
+      state.shouldHighlightCorrectSequence =
+        !state.shouldHighlightCorrectSequence;
     },
     toggleDoWordGuessRetries: (state: State) => {
       state.doWordGuessRetries = !state.doWordGuessRetries;
@@ -68,7 +69,7 @@ export const gameSettings = createSlice({
 
 export const {
   toggleDoCharacterTips,
-  toggleShouldHighlightSequences,
+  toggleShouldHighlightCorrectSequence,
   toggleDoWordGuessRetries,
   toggleDoCustomWordDifficultyLevel,
   setWordDifficultyLevel,

@@ -9,11 +9,11 @@ const KanaWord = () => {
   const currentWord = words[currentWordIndex];
   const kanaArr = currentWord.kana.split('');
 
-  const { shouldHighlightSequences } = useAppSelector(
+  const { shouldHighlightCorrectSequence } = useAppSelector(
     (state) => state.gameSettingsReducer,
   );
 
-  return shouldHighlightSequences ? (
+  return shouldHighlightCorrectSequence ? (
     <KanaWordWithHighlighting currentWord={currentWord} kanaArr={kanaArr} />
   ) : (
     <KanaWordBase kanaArr={kanaArr} />
