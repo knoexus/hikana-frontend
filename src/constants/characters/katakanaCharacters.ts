@@ -1,11 +1,9 @@
 import {
-  BaseKanaTableCharacter,
+  KanaTableCharactersMapping,
   KanaTableCharacter,
 } from '@/types/KanaCharacter';
 
-export const katakanaTableCharactersObject: {
-  [key: string]: BaseKanaTableCharacter;
-} = {
+export const katakanaTableCharactersObject: KanaTableCharactersMapping = {
   ア: {
     romaji: 'a',
     tableProps: {

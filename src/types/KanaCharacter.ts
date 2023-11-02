@@ -25,3 +25,7 @@ export interface BaseKanaTableCharacter extends BaseKanaCharacter {
 }
 
 export type KanaTableCharacter = KanaCharacter & BaseKanaTableCharacter;
+
+export type KanaTableCharactersMapping = {
+  [key: string]: BaseKanaTableCharacter;
+};
