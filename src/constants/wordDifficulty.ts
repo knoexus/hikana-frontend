@@ -1,7 +1,7 @@
-export const wordDifficultyToMinMaxKanaCharacters: {
-  [key: string]: { minKanaCharacters?: number; maxKanaCharacters?: number };
+export const wordDifficultyToMinMaxKanaSymbols: {
+  [key: string]: { minKanaSymbols?: number; maxKanaSymbols?: number };
 } = {
-  low: { maxKanaCharacters: 4 },
-  medium: { minKanaCharacters: 3, maxKanaCharacters: 7 },
-  high: { minKanaCharacters: 6 },
+  low: { maxKanaSymbols: 4 },
+  medium: { minKanaSymbols: 3, maxKanaSymbols: 7 },
+  high: { minKanaSymbols: 6 },
 };

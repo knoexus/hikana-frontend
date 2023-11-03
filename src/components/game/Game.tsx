@@ -2,7 +2,7 @@ import hikanaApi from '@/state/redux/apis/hikanaApi';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
 import { useKanaTypeFromPath } from '@/utilities/hooks/useKanaTypeFromPath';
 import { getKanaCharacterStringsBySectionColumnSelection } from '@/utilities/kanaTableCharacters';
-import { wordDifficultyToMinMaxKanaCharacters } from '@/constants/wordDifficulty';
+import { wordDifficultyToMinMaxKanaSymbols } from '@/constants/wordDifficulty';
 import { useMemo } from 'react';
 import LoadedGame from './partials/loaded-game/LoadedGame';
 import Loading from './partials/loading/Loading';
@@ -29,10 +29,10 @@ const Game = () => {
   const { isLoading, isError, data } = hikanaApi.useGetAllWordsQuery({
     kanaType,
     ...(kanaCharacterStrings && {
-      kanaSyllables: kanaCharacterStrings.join(','),
+      kanaCharacters: kanaCharacterStrings.join(','),
     }),
     ...(doCustomLevel && {
-      ...wordDifficultyToMinMaxKanaCharacters[level],
+      ...wordDifficultyToMinMaxKanaSymbols[level],
     }),
     limit: 100,
   });

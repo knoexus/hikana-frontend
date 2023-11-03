@@ -7,16 +7,19 @@ const KanaWord = () => {
   const words = useWords();
   const { currentWordIndex } = useAppSelector((state) => state.gameReducer);
   const currentWord = words[currentWordIndex];
-  const kanaArr = currentWord.kana.split('');
+  const kanaSymbolArr = currentWord.kana.split('');
 
   const { shouldHighlightCorrectSequence } = useAppSelector(
     (state) => state.gameSettingsReducer,
   );
 
   return shouldHighlightCorrectSequence ? (
-    <KanaWordWithHighlighting currentWord={currentWord} kanaArr={kanaArr} />
+    <KanaWordWithHighlighting
+      currentWord={currentWord}
+      kanaSymbolArr={kanaSymbolArr}
+    />
   ) : (
-    <KanaWordBase kanaArr={kanaArr} />
+    <KanaWordBase kanaSymbolArr={kanaSymbolArr} />
   );
 };
 

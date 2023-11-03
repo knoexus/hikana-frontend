@@ -5,9 +5,9 @@ import { RootState } from '../store';
 
 interface GetAllWordsQueryParams {
   kanaType: KanaType;
-  kanaSyllables?: string;
-  minKanaSyllables?: number;
-  maxKanaSyllables?: number;
+  kanaCharacters?: string;
+  minKanaSymbols?: number;
+  maxKanaSymbols?: number;
   limit?: number;
 }
 

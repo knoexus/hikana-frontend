@@ -4,15 +4,15 @@ import KanaWordBase from './KanaWordBase';
 
 const KanaWordWithHighlighting = ({
   currentWord,
-  kanaArr,
+  kanaSymbolArr,
 }: {
   currentWord: Word;
-  kanaArr: string[];
+  kanaSymbolArr: string[];
 }) => {
   const endHighlightingAtIndex = useEndHighlightingAtIndex({ currentWord });
   return (
     <KanaWordBase
-      kanaArr={kanaArr}
+      kanaSymbolArr={kanaSymbolArr}
       endHighlightingAtIndex={endHighlightingAtIndex}
     />
   );

@@ -1,12 +1,12 @@
 const KanaWordBase = ({
-  kanaArr,
+  kanaSymbolArr,
   endHighlightingAtIndex = -1,
 }: {
-  kanaArr: string[];
+  kanaSymbolArr: string[];
   endHighlightingAtIndex?: number;
 }) => (
   <div>
-    {kanaArr.map((char, idx) => (
+    {kanaSymbolArr.map((char, idx) => (
       <span
         key={idx}
         className={`${idx <= endHighlightingAtIndex && 'text-green-500'}`}

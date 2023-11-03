@@ -1,36 +1,34 @@
 import { KanaType } from '@/types/Word';
 import { hiraganaTableCharactersObject } from '@/constants/characters/hiraganaCharacters';
 import { katakanaTableCharactersObject } from '@/constants/characters/katakanaCharacters';
-import { KanaTableCharactersMapping } from '@/types/KanaCharacter';
 
 interface KanaRomaji {
   kana: string;
   romaji: string;
 }
 
-const identifyKanaSpecialSymbolValue = (
+const getKanaSpecialSymbolValue = (
   specialSymbol: string,
-  symbolBefore: string | undefined,
-  symbolAfter: string | undefined,
-  kanaTableCharactersObject: KanaTableCharactersMapping,
+  romajiTransliterationForKanaCharacterBefore: string | undefined,
+  romajiTransliterationForSymbolBefore: string | undefined,
 ): string => {
   if (specialSymbol === 'っ' || specialSymbol === 'ッ') {
-    if (!symbolAfter) {
+    if (!romajiTransliterationForSymbolBefore) {
       return '';
     }
     // Exceptions
-    if (symbolAfter === 'ち' || symbolAfter === '') {
+    if (romajiTransliterationForSymbolBefore === 'chi') {
       return 't';
     }
-    return kanaTableCharactersObject[symbolAfter].romaji[0];
+    return romajiTransliterationForSymbolBefore[0];
   }
-  if (specialSymbol === 'う' || specialSymbol === 'ー') {
-    if (!symbolBefore) {
+  if (specialSymbol === 'ぅ' || specialSymbol === 'ー') {
+    if (!romajiTransliterationForKanaCharacterBefore) {
       throw new Error(
-        'Cannot apply vowel prolongation to an undefined symbol.',
+        'Cannot apply vowel prolongation to an undefined character.',
       );
     }
-    return kanaTableCharactersObject[symbolBefore].romaji.slice(-1);
+    return romajiTransliterationForKanaCharacterBefore.slice(-1);
   }
   throw new Error('The given symbol is not special.');
 };
@@ -43,51 +41,59 @@ export const mapKanaToRomaji = (
     kanaType === 'hiragana'
       ? hiraganaTableCharactersObject
       : katakanaTableCharactersObject;
-  const kanaCharArr = kana.split('');
+  const kanaSymbolArr = kana.split('');
 
-  return kanaCharArr.reduce<KanaRomaji[]>((kanaRomajiArr, kanaChar, idx) => {
-    // If the previous character was compound (e.g., みゅ), skip this index.
-    if (kanaRomajiArr.map(({ kana }) => kana).join('').length > idx) {
-      return kanaRomajiArr;
-    }
+  return kanaSymbolArr.reduce<KanaRomaji[]>(
+    (kanaRomajiArr, kanaSymbol, idx) => {
+      // If the previous character was compound (e.g., みゅ), skip this symbol index.
+      if (kanaRomajiArr.map(({ kana }) => kana).join('').length > idx) {
+        return kanaRomajiArr;
+      }
 
-    // Try getting a kana syllable by two symbols – max there is in a table
-    const maxKanaSyllable =
-      kanaChar + (kanaCharArr[idx + 1] ? kanaCharArr[idx + 1] : '');
+      // Try getting a kana character by two symbols – max there is in a table
+      const maxKanaCharacter =
+        kanaSymbol + (kanaSymbolArr[idx + 1] ? kanaSymbolArr[idx + 1] : '');
 
-    if (kanaTableCharactersObject[maxKanaSyllable]) {
+      if (kanaTableCharactersObject[maxKanaCharacter]) {
+        return [
+          ...kanaRomajiArr,
+          {
+            kana: maxKanaCharacter,
+            romaji: kanaTableCharactersObject[maxKanaCharacter].romaji,
+          },
+        ];
+      }
+
+      if (kanaTableCharactersObject[kanaSymbol]) {
+        return [
+          ...kanaRomajiArr,
+          {
+            kana: kanaSymbol,
+            romaji: kanaTableCharactersObject[kanaSymbol].romaji,
+          },
+        ];
+      }
+
+      // Must be a special character otherwise
+      const lastKanaRomajiArrElement = kanaRomajiArr[kanaRomajiArr.length - 1];
+      const nextKanaSymbolArrElement = kanaSymbolArr[idx + 1];
+      const specialCharacterRomaji = getKanaSpecialSymbolValue(
+        kanaSymbol,
+        lastKanaRomajiArrElement && lastKanaRomajiArrElement.romaji,
+        nextKanaSymbolArrElement &&
+          kanaTableCharactersObject[nextKanaSymbolArrElement] &&
+          kanaTableCharactersObject[nextKanaSymbolArrElement].romaji,
+      );
       return [
         ...kanaRomajiArr,
         {
-          kana: maxKanaSyllable,
-          romaji: kanaTableCharactersObject[maxKanaSyllable].romaji,
+          kana: kanaSymbol,
+          romaji: specialCharacterRomaji,
         },
       ];
-    }
-
-    if (kanaTableCharactersObject[kanaChar]) {
-      return [
-        ...kanaRomajiArr,
-        { kana: kanaChar, romaji: kanaTableCharactersObject[kanaChar].romaji },
-      ];
-    }
-
-    // Must be a special character otherwise
-    const specialCharacterRomaji = identifyKanaSpecialSymbolValue(
-      kanaChar,
-      kanaRomajiArr[kanaRomajiArr.length - 1] &&
-        kanaRomajiArr[kanaRomajiArr.length - 1].kana,
-      kanaCharArr[idx + 1],
-      kanaTableCharactersObject,
-    );
-    return [
-      ...kanaRomajiArr,
-      {
-        kana: kanaChar,
-        romaji: specialCharacterRomaji,
-      },
-    ];
-  }, []);
+    },
+    [],
+  );
 };
 
 export const getMatchingKanaSubstring = (
@@ -100,10 +106,13 @@ export const getMatchingKanaSubstring = (
   let matchingKanaString = '';
   let matchingRomajiString = '';
 
-  for (const { kana: kanaSyllable, romaji: romajiSyllable } of kanaRomajiArr) {
-    if (romajiPart.startsWith(matchingRomajiString + romajiSyllable)) {
-      matchingKanaString += kanaSyllable;
-      matchingRomajiString += romajiSyllable;
+  for (const {
+    kana: kanaCharacter,
+    romaji: romajiTransliteration,
+  } of kanaRomajiArr) {
+    if (romajiPart.startsWith(matchingRomajiString + romajiTransliteration)) {
+      matchingKanaString += kanaCharacter;
+      matchingRomajiString += romajiTransliteration;
     } else {
       break;
     }
