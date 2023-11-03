@@ -11,7 +11,7 @@ export interface Word {
   kana_type: KanaType;
   pitch_chars: string[] | null;
   occurence_level: number;
-  jlpt_level: number;
+  jlpt_level: number | null;
   romaji: string;
   translations_eng: string[];
 }
