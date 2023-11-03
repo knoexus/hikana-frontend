@@ -14,18 +14,29 @@ export interface TableProps {
 
 interface BaseKanaCharacter {
   romaji: string;
-}
-
-export interface KanaCharacter extends BaseKanaCharacter {
   kana: string;
 }
 
-export interface BaseKanaTableCharacter extends BaseKanaCharacter {
-  tableProps: TableProps;
+interface TippedKanaCharacter {
+  tips?: string[];
 }
 
-export type KanaTableCharacter = KanaCharacter & BaseKanaTableCharacter;
+export type KanaTableCharacter = BaseKanaCharacter & { tableProps: TableProps };
+
+export type KanaCharacter = KanaTableCharacter & TippedKanaCharacter;
+
+export type KanaTableCharacterNoKana = Omit<KanaTableCharacter, 'kana'>;
+
+export type KanaCharacterNoKana = Omit<KanaCharacter, 'kana'>;
 
 export type KanaTableCharactersMapping = {
-  [key: string]: BaseKanaTableCharacter;
+  [key: string]: KanaTableCharacterNoKana;
+};
+
+export type KanaCharactersMapping = {
+  [key: string]: KanaCharacterNoKana;
+};
+
+export type KanaCharacterTipsMapping = {
+  [key: string]: string[] | undefined;
 };

@@ -1,9 +1,11 @@
+import { KanaCharactersMapping } from '@/types/KanaCharacter';
 import {
-  KanaTableCharacter,
-  KanaTableCharactersMapping,
-} from '@/types/KanaCharacter';
+  createKanaTableCharactersArray,
+  createKanaTableCharactersObject,
+  createKanaCharacterTipsObject,
+} from '@/utilities/kanaConstants';
 
-export const hiraganaTableCharactersObject: KanaTableCharactersMapping = {
+export const hiraganaCharactersObject: KanaCharactersMapping = {
   あ: {
     romaji: 'a',
     tableProps: {
@@ -695,8 +697,14 @@ export const hiraganaTableCharactersObject: KanaTableCharactersMapping = {
   },
 };
 
-export const hiraganaTableCharactersArray: KanaTableCharacter[] =
-  Object.entries(hiraganaTableCharactersObject).map(([kana, rest]) => ({
-    kana,
-    ...rest,
-  }));
+export const hiraganaTableCharactersObject = createKanaTableCharactersObject(
+  hiraganaCharactersObject,
+);
+
+export const hiraganaTableCharactersArray = createKanaTableCharactersArray(
+  hiraganaTableCharactersObject,
+);
+
+export const hiraganaCharacterTipsObject = createKanaCharacterTipsObject(
+  hiraganaCharactersObject,
+);
