@@ -6,11 +6,11 @@ const WordCounter = () => {
   const { currentWordIndex, correctGuessesCount, incorrectGuessesCount } =
     useAppSelector((state) => state.gameReducer);
   return (
-    <div>
-      <span>{currentWordIndex + 1}</span> [
+    <div className="text-lg">
+      <span>{currentWordIndex + 1}</span> of
+      <span> {totalCount}</span> (
       <span className="text-green-500">{correctGuessesCount}</span>|
-      <span className="text-red-500">{incorrectGuessesCount}</span>] of
-      <span> {totalCount}</span>
+      <span className="text-red-500">{incorrectGuessesCount}</span>)
     </div>
   );
 };

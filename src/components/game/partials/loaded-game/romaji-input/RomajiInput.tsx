@@ -25,7 +25,7 @@ const RomajiInput = () => {
     <input
       onChange={handleInputOnChange}
       onKeyUp={handleInputOnKeyUp}
-      className="outline outline-1"
+      className="border-b focus:border-b-slate-400 py-1 mt-2 outline-none"
       type="text"
       value={currentWordInput}
     ></input>

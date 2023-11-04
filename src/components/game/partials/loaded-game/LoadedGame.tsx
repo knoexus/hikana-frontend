@@ -6,8 +6,8 @@ import PlayedWords from './played-words/PlayedWords';
 import WordRetryLives from './word-retry-lives/WordRetryLives';
 
 const LoadedGame = () => (
-  <>
-    <div className="container mt-5 p-4 border rounded-2xl flex flex-col w-48 justify-center">
+  <div className="w-full flex flex-col justify-center items-center">
+    <div className="container mt-5 p-4 border rounded-2xl flex flex-col w-96 justify-center items-center relative">
       <WordCounter />
       <WordRetryLives />
       <KanaWord />
@@ -15,7 +15,7 @@ const LoadedGame = () => (
       <NextWordButton />
     </div>
     <PlayedWords />
-  </>
+  </div>
 );
 
 export default LoadedGame;

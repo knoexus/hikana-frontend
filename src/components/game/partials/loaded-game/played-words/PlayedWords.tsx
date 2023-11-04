@@ -9,7 +9,7 @@ const PlayedWords = () => {
   );
   return (
     words.length > 0 && (
-      <div className="container mt-5 p-4 border rounded-2xl flex flex-col-reverse w-48 justify-center">
+      <div className="container mt-5 p-4 flex flex-row justify-center w-full overflow-x-scroll">
         {words.slice(0, currentWordIndex).map((word, idx) => (
           <PlayedWord key={idx} word={word} guess={guesses[idx]} />
         ))}

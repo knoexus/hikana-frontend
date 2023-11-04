@@ -19,9 +19,10 @@ const PlayedWord = ({ word, guess }: { word: Word; guess: Guess }) => {
       </Modal>
       <div
         onClick={() => setIsModalVisible(true)}
+        style={{ width: '112px' }}
         className={`${
           guess.wasCorrect ? 'bg-green-500' : 'bg-red-500'
-        } border rounded-xl p-2`}
+        } border rounded-xl p-2 mx-1 cursor-pointer`}
       >
         <div>{word.kana}</div>
         <div>

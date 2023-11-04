@@ -5,11 +5,13 @@ const KanaWordBase = ({
   kanaSymbolArr: string[];
   endHighlightingAtIndex?: number;
 }) => (
-  <div>
+  <div className="mt-6">
     {kanaSymbolArr.map((char, idx) => (
       <span
         key={idx}
-        className={`${idx <= endHighlightingAtIndex && 'text-green-500'}`}
+        className={`${
+          idx <= endHighlightingAtIndex && 'text-green-500'
+        } text-2xl font-medium`}
       >
         {char}
       </span>

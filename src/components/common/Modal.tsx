@@ -20,7 +20,9 @@ const Modal = ({
       style={{ visibility: isVisible ? 'visible' : 'hidden' }}
       tabIndex={-1}
       aria-hidden="true"
-      className="fixed z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+      className={`fixed z-50 w-full md:inset-0 h-full overflow-x-hidden overflow-y-auto flex justify-center items-center ${
+        isVisible && 'bg-gray-600 bg-opacity-80'
+      }`}
     >
       {/* Placing ref on a relative element is essential*/}
       <div className="relative w-full max-w-2xl max-h-full" ref={modalRef}>
