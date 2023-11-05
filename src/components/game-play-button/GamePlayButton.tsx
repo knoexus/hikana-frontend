@@ -2,19 +2,24 @@
 
 import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
 import { setGameIsOn } from '@/state/redux/features/gameSlice';
+import { MouseEvent } from 'react';
+import OutlineButton from '../common/OutlineButton';
 
 const GamePlayButton = () => {
   const dispatch = useAppDispatch();
-  const handleOnClick = () => {
+  const handleOnClick = (
+    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
+  ) => {
+    e.preventDefault();
     dispatch(setGameIsOn(true));
   };
   return (
-    <button
-      className="bg-white text-green-500 border-green-500 hover:bg-green-500 hover:text-white hover: hover:border-white border font-bold py-2 px-4 rounded-xl"
-      onClick={handleOnClick}
-    >
-      Play
-    </button>
+    <OutlineButton
+      text="Play"
+      bgColor="white"
+      outlineColor="green-500"
+      onClick={(e) => handleOnClick(e)}
+    />
   );
 };
 

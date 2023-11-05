@@ -1,6 +1,7 @@
 import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
 import { proceedToNextWord } from '@/state/redux/features/gameSlice';
 import { MouseEvent } from 'react';
+import OutlineButton from '@/components/common/OutlineButton';
 
 const NextWordButton = () => {
   const dispatch = useAppDispatch();
@@ -12,12 +13,13 @@ const NextWordButton = () => {
   };
 
   return (
-    <button
-      className="bg-white text-gray-500 border-gray-500 hover:bg-gray-500 hover:text-white hover: hover:border-white border font-bold py-2 px-4 rounded-xl mt-9"
+    <OutlineButton
+      text="Next Word ->"
+      bgColor="white"
+      outlineColor="gray-500"
       onClick={(e) => handleOnClick(e)}
-    >
-      Next Word {`${'->'}`}
-    </button>
+      extraClasses="mt-9"
+    />
   );
 };
 
