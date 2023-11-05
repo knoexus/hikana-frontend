@@ -1,18 +1,16 @@
-import { Word } from '@/types/Word';
-import useEndHighlightingAtIndex from './useEndHighlightingAtIndex';
+import useEndHighlightingAtIndex from './hooks/useEndHighlightingAtIndex';
 import KanaWordBase from './KanaWordBase';
+import { KanaRomaji } from '@/utilities/kana';
 
 const KanaWordWithHighlighting = ({
-  currentWord,
-  kanaSymbolArr,
+  kanaToRomajiArr,
 }: {
-  currentWord: Word;
-  kanaSymbolArr: string[];
+  kanaToRomajiArr: KanaRomaji[];
 }) => {
-  const endHighlightingAtIndex = useEndHighlightingAtIndex({ currentWord });
+  const endHighlightingAtIndex = useEndHighlightingAtIndex(kanaToRomajiArr);
   return (
     <KanaWordBase
-      kanaSymbolArr={kanaSymbolArr}
+      kanaToRomajiArr={kanaToRomajiArr}
       endHighlightingAtIndex={endHighlightingAtIndex}
     />
   );

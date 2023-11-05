@@ -12,6 +12,7 @@ export const hiraganaCharactersObject: KanaCharactersMapping = {
       section: 'Base',
       position: { row: 0, column: 0 },
     },
+    tips: ['This is the first character in the table.'],
   },
   い: {
     romaji: 'i',

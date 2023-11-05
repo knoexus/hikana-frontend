@@ -2,7 +2,7 @@ import { KanaType } from '@/types/Word';
 import { hiraganaTableCharactersObject } from '@/constants/characters/hiraganaCharacters';
 import { katakanaTableCharactersObject } from '@/constants/characters/katakanaCharacters';
 
-interface KanaRomaji {
+export interface KanaRomaji {
   kana: string;
   romaji: string;
 }
@@ -102,9 +102,11 @@ export const getMatchingKanaSubstring = (
 ): {
   matchingKanaString: string;
   matchingRomajiString: string;
+  breakIndex: number;
 } => {
   let matchingKanaString = '';
   let matchingRomajiString = '';
+  let breakIndex = -1;
 
   for (const {
     kana: kanaCharacter,
@@ -113,10 +115,11 @@ export const getMatchingKanaSubstring = (
     if (romajiPart.startsWith(matchingRomajiString + romajiTransliteration)) {
       matchingKanaString += kanaCharacter;
       matchingRomajiString += romajiTransliteration;
+      breakIndex++;
     } else {
       break;
     }
   }
 
-  return { matchingKanaString, matchingRomajiString };
+  return { matchingKanaString, matchingRomajiString, breakIndex };
 };
