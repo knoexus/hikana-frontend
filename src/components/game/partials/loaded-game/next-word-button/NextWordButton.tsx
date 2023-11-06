@@ -15,8 +15,7 @@ const NextWordButton = () => {
   return (
     <OutlineButton
       text="Next Word ->"
-      bgColor="white"
-      outlineColor="gray-500"
+      type="info"
       onClick={(e) => handleOnClick(e)}
       extraClasses="mt-9"
     />

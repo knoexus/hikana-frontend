@@ -16,8 +16,7 @@ const GamePlayButton = () => {
   return (
     <OutlineButton
       text="Play"
-      bgColor="white"
-      outlineColor="green-500"
+      type="success"
       onClick={(e) => handleOnClick(e)}
     />
   );
