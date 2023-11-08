@@ -8,8 +8,12 @@ const WordRetryLivesWithCount = () => {
     retriesForCurrentWord > 0 && (
       <div className="absolute right-3 top-3 border rounded-xl py-1 px-2 flex flex-row">
         {Array(retriesForCurrentWord)
-          .fill(<span className="px-0.5">❤️</span>)
-          .map((e) => e)}
+          .fill(null)
+          .map((_, idx) => (
+            <span key={idx} className="px-0.5">
+              ❤️
+            </span>
+          ))}
       </div>
     )
   );
