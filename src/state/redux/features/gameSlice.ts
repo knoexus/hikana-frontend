@@ -1,7 +1,7 @@
 import { Action, PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ThunkAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { getAllWordsCacheSelector } from '../apis/hikanaApi';
+import hikanaApi, { getAllWordsCacheSelector } from '../apis/hikanaApi';
 
 export interface Guess {
   input: string;
@@ -64,6 +64,7 @@ export const game = createSlice({
     addGuess: (state, action: PayloadAction<Guess>) => {
       state.guesses.push(action.payload);
     },
+    reset: () => initialState,
   },
 });
 
@@ -97,6 +98,12 @@ export const proceedToNextWord =
     dispatch(game.actions.incrementCurrentWordIndex());
     dispatch(game.actions.resetCurrentWordInput());
     dispatch(game.actions.resetRetriesForCurrentWord());
+  };
+
+export const resetGameState =
+  (): ThunkAction<void, RootState, unknown, Action<unknown>> => (dispatch) => {
+    dispatch(game.actions.reset());
+    dispatch(hikanaApi.util.resetApiState());
   };
 
 export const {
