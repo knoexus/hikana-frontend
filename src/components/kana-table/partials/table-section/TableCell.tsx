@@ -23,16 +23,12 @@ const TableCell = ({
     <td className="p-1">
       {character && (
         <div
-          className={`flex flex-col p-2 overflow-hidden ${
+          className={`flex flex-col p-2 overflow-hidden min-w-[56px] ${
             isSelectedCharacter(column) ? 'bg-violet-300' : 'bg-white'
           } bg-opacity-50 border rounded-xl`}
         >
-          <div className="flex-1 text-center line-height-20">
-            {character.kana}
-          </div>
-          <div className="flex-1 text-center line-height-20 bg-teal-100">
-            {character.romaji}
-          </div>
+          <div className="text-center">{character.kana}</div>
+          <div className="text-center bg-teal-100">{character.romaji}</div>
         </div>
       )}
     </td>
