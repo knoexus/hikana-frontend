@@ -15,12 +15,12 @@ const GamePlayButton = () => {
     dispatch(setGameIsOn(true));
   };
   return (
-    <Container extraClasses="mt-8 mb-4">
+    <Container extraClasses="mt-8 mb-4 text-center">
       <OutlineButton
         text="Play"
         type="success"
         onClick={(e) => handleOnClick(e)}
-        extraClasses="mt-5 mb-5 w-full"
+        extraClasses="mt-5 mb-5 w-1/2"
       />
     </Container>
   );
