@@ -33,6 +33,7 @@ const TableSectionColumnSelector = ({
       {columnInitializer.map((_, idx) => (
         <td key={idx}>
           <input
+            className="mt-4 cursor-pointer"
             checked={columnSelection[idx]}
             type="checkbox"
             onChange={() => handleCheckboxOnChange(idx)}
