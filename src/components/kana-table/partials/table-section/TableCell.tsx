@@ -20,10 +20,10 @@ const TableCell = ({
   const isSelectedCharacter = (key: number) => columnSelection[key];
 
   return (
-    <td className="p-1 max-w-min">
+    <td className="p-1">
       {character && (
         <div
-          className={`flex flex-col p-2 ${
+          className={`flex flex-col p-2 overflow-hidden ${
             isSelectedCharacter(column) ? 'bg-violet-300' : 'bg-white'
           } bg-opacity-50 border rounded-xl`}
         >

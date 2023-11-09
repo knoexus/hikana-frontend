@@ -29,7 +29,7 @@ const TableSectionColumnSelector = ({
   };
 
   return (
-    <tr>
+    <tr className="text-center">
       {columnInitializer.map((_, idx) => (
         <td key={idx}>
           <input

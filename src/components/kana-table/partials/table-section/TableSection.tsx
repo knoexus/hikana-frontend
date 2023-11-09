@@ -27,16 +27,18 @@ const TableSection = ({ kanaTableCharactersArray }: TableSectionProps) => {
   }, [tableSectionCharacters]);
 
   return (
-    <table className="w-full table-fixed">
-      <tbody>
-        <TableSectionCharacters
-          characters={tableSectionCharacters}
-          rowInitializer={maxRowArray}
-          columnInitializer={maxColumnArray}
-        />
-        <TableSectionColumnSelector columnInitializer={maxColumnArray} />
-      </tbody>
-    </table>
+    <div className="overflow-x-scroll">
+      <table className="w-full table-fixed">
+        <tbody>
+          <TableSectionCharacters
+            characters={tableSectionCharacters}
+            rowInitializer={maxRowArray}
+            columnInitializer={maxColumnArray}
+          />
+          <TableSectionColumnSelector columnInitializer={maxColumnArray} />
+        </tbody>
+      </table>
+    </div>
   );
 };
 
