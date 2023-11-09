@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const staticRoutes: { [key: string]: string } = {
   '': 'Home',
-  about: 'About',
+  playground: 'Playground',
   hiragana: 'Hiragana',
   katakana: 'Katakana',
   results: 'Results',
