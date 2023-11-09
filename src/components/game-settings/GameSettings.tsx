@@ -3,16 +3,18 @@ import CharacterTipsToggleField from './fields/CharacterTipsToggleField';
 import HighlightCorrectSequenceToggleField from './fields/HighlightCorrectSequenceToggleField';
 import RetryGuessToggleField from './fields/RetryGuessToggleField';
 import WordDifficultyMixedField from './fields/WordDifficultyMixedField';
+import RoundedContainer from '../common/RoundedContainer';
+import Title from '../common/Title';
 
 const GameSettings = () => {
   return (
-    <div className="container mt-8 mb-4 p-4 rounded-2xl shadow-lg inset-0 bg-gradient-to-r from-gray-100 to-slate-200 bg-opacity-75">
-      <h1 className="text-3xl mb-4">Game Settings</h1>
+    <RoundedContainer extraClasses="mt-8 bg-gradient-to-r from-gray-100 to-slate-200 bg-opacity-75">
+      <Title>Game Settings</Title>
       <CharacterTipsToggleField />
       <HighlightCorrectSequenceToggleField />
       <RetryGuessToggleField />
       <WordDifficultyMixedField />
-    </div>
+    </RoundedContainer>
   );
 };
 
