@@ -8,7 +8,7 @@ import Title from '../common/Title';
 
 const GameSettings = () => {
   return (
-    <RoundedContainer extraClasses="mt-8 bg-gradient-to-r from-gray-100 to-slate-200 bg-opacity-75">
+    <RoundedContainer extraClasses="mt-8 bg-gray-100 bg-opacity-75">
       <Title>Game Settings</Title>
       <CharacterTipsToggleField />
       <HighlightCorrectSequenceToggleField />

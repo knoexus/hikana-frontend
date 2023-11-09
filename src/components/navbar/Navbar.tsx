@@ -10,7 +10,7 @@ const staticRoutes: { [key: string]: string } = {
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-pink-800 p-4">
+    <nav className="p-4 bg-[#c07ce2]">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
           <Link href="/" className="text-white text-2xl font-bold">
