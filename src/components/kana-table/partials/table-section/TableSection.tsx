@@ -27,7 +27,7 @@ const TableSection = ({ kanaTableCharactersArray }: TableSectionProps) => {
   }, [tableSectionCharacters]);
 
   return (
-    <div className="overflow-x-scroll mt-4">
+    <div className="overflow-x-scroll mt-4 pb-1.5">
       <table className="w-full">
         <tbody>
           <TableSectionCharacters

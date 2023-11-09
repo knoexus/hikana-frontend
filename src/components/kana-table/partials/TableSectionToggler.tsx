@@ -23,7 +23,7 @@ const TableSectionToggler = ({
   };
 
   return (
-    <div className="inline-flex [&>*:not(:first-child)]:ml-2 max-w-full overflow-x-scroll">
+    <div className="inline-flex [&>*:not(:first-child)]:ml-2 max-w-full overflow-x-scroll pb-1.5">
       {kanaTableSectionNames.map((_tableSection: string, idx: number) => (
         <button
           onClick={(e) => onTableSectionClick(e, _tableSection as TableSection)}
