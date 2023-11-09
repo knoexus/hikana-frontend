@@ -4,10 +4,19 @@ import Modal from '@/components/common/Modal';
 import WordBreakdown from './WordBreakdown';
 import { Guess } from '@/state/redux/features/gameSlice';
 import { Word } from '@/types/Word';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const PlayedWord = ({ word, guess }: { word: Word; guess: Guess }) => {
+  const ref = useRef<HTMLDivElement>(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+  // When a new PlayWord is added, don't let it stay unfocused.
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.scrollIntoView();
+    }
+  });
+
   return (
     <>
       <Modal
@@ -18,11 +27,11 @@ const PlayedWord = ({ word, guess }: { word: Word; guess: Guess }) => {
         <WordBreakdown word={word} />
       </Modal>
       <div
+        ref={ref}
         onClick={() => setIsModalVisible(true)}
-        style={{ width: '112px' }}
         className={`${
           guess.wasCorrect ? 'bg-green-500' : 'bg-red-500'
-        } border rounded-xl p-2 mx-1 cursor-pointer`}
+        } border rounded-xl p-2 mx-1 cursor-pointer min-w-[120px] animate-gelatine-finite`}
       >
         <div>{word.kana}</div>
         <div>
