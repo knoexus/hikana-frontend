@@ -1,4 +1,5 @@
 import BooleanToggleField from './BooleanToggleField';
+import NestedFields from './NestedFields';
 import SelectorField from './SelectorField';
 
 interface NameValue<T> {
@@ -44,12 +45,14 @@ const OptionalNumericRangeSliderField = ({
         onChangeCallback={booleanComponentOnChangeCallback}
       />
       {booleanComponentValue && (
-        <SelectorField
-          name={selectorComponentName}
-          value={selectorComponentValue}
-          options={selectorComponentOptions}
-          onChangeCallback={selectorComponentOnChangeCallback}
-        />
+        <NestedFields>
+          <SelectorField
+            name={selectorComponentName}
+            value={selectorComponentValue}
+            options={selectorComponentOptions}
+            onChangeCallback={selectorComponentOnChangeCallback}
+          />
+        </NestedFields>
       )}
     </>
   );

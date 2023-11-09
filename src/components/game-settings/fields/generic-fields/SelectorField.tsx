@@ -15,7 +15,7 @@ const SelectorField = ({
     <div className="mb-4">
       <label>{name}</label>
       <select
-        className="ml-3"
+        className="ml-3 border p-2 rounded-lg cursor-pointer"
         value={value}
         onChange={(e) => onChangeCallback?.(e.target.value)}
       >
