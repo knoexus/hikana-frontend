@@ -1,6 +1,6 @@
-import { ComponentProps } from '@/types/ComponentProps';
+import { PropsWithChildren } from 'react';
 
-const NestedFields = ({ children }: ComponentProps) => (
+const NestedFields = ({ children }: PropsWithChildren) => (
   <div className="ml-3">{children}</div>
 );
 

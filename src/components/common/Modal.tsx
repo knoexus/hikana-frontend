@@ -1,18 +1,18 @@
 'use client';
 
 import { useOutsideClickResolver } from '@/utilities/hooks/useOutsideClickResolver';
-import { ComponentProps } from '@/types/ComponentProps';
+import { PropsWithChildren } from 'react';
 
 const Modal = ({
   isVisible,
   title,
   children,
   onClose,
-}: {
+}: PropsWithChildren<{
   isVisible: boolean;
   title: string;
   onClose: () => void;
-} & ComponentProps) => {
+}>) => {
   const modalRef = useOutsideClickResolver<HTMLDivElement>(onClose);
 
   return (

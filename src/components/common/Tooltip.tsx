@@ -1,9 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { ComponentProps } from '@/types/ComponentProps';
+import { useState, PropsWithChildren } from 'react';
 
-const Tooltip = ({ text, children }: { text: string } & ComponentProps) => {
+const Tooltip = ({ text, children }: PropsWithChildren<{ text: string }>) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const showTooltip = () => {

@@ -2,9 +2,9 @@
 
 import { store } from './store';
 import { Provider } from 'react-redux';
-import { ComponentProps } from '@/types/ComponentProps';
+import { PropsWithChildren } from 'react';
 
-const ReduxProvider = ({ children }: ComponentProps) => (
+const ReduxProvider = ({ children }: PropsWithChildren) => (
   <Provider store={store}>{children}</Provider>
 );
 
