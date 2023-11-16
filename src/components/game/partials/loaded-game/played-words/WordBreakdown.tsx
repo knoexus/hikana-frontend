@@ -1,19 +1,33 @@
 import { Word } from '@/types/Word';
+import JLPTLevel from './JLPTLevel';
 
-const WordBreakdown = ({ word }: { word: Word }) => {
-  return (
-    <div className="flex flex-col">
-      <h2>{word.kana}</h2>
-      <span>Romaji Transliteration: {word.romaji}</span>
-      {word.kanji && <span>Kanji Equivalent: {word.kanji}</span>}
-      {word.jlpt_level && <span>JLPT Level: {word.jlpt_level}</span>}
-      <span>Occurrence Level: {word.occurence_level}</span>
+const WordBreakdown = ({ word }: { word: Word }) => (
+  <div className="flex flex-row">
+    <div className="flex flex-col w-3/4">
+      <h2 className="text-2xl">{word.kana}</h2>
+      <div className="font-extralight text-base flex flex-col mt-3">
+        {word.kanji && <span>📕 - {word.kanji}</span>}
+        <span>🔄 - {word.romaji}</span>
+      </div>
+      <div className="mt-3 flex flex-col">
+        <span className="text-lg">Translations:</span>
+        <ul className="list-disc font-extralight text-base">
+          {word.translations_eng.map((translation, idx) => (
+            <li className="ml-5" key={idx}>
+              {translation}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div className="flex flex-col [&>*:not(:first-child)]:mt-2">
+      {word.jlpt_level && <JLPTLevel value={word.jlpt_level} />}
+      <span>Occurrence: {word.occurence_level}</span>
       {word.pitch_chars && (
         <span>Pitch Chars: {word.pitch_chars.join(', ')}</span>
       )}
-      <span>Translations: {word.translations_eng.join(', ')}</span>
     </div>
-  );
-};
+  </div>
+);
 
 export default WordBreakdown;

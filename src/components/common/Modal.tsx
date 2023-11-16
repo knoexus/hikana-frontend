@@ -20,7 +20,7 @@ const Modal = ({
       style={{ visibility: isVisible ? 'visible' : 'hidden' }}
       tabIndex={-1}
       aria-hidden="true"
-      className={`fixed z-50 w-full md:inset-0 h-full overflow-x-hidden overflow-y-auto flex justify-center items-center ${
+      className={`fixed z-50 w-full h-full inset-0 flex justify-center items-center ${
         isVisible && 'bg-gray-600 bg-opacity-80'
       }`}
     >
