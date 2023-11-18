@@ -1,5 +1,5 @@
-import { ComponentProps } from './ComponentProps';
+import { PropsWithChildren } from 'react';
 
-export interface TailwindComponentProps extends ComponentProps {
+export type TailwindComponentProps = PropsWithChildren<{
   extraClasses?: string;
-}
+}>;
