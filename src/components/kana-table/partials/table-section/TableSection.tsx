@@ -5,10 +5,7 @@ import { useMemo } from 'react';
 import { useTableSection } from '../../context/TableSectionContext';
 import TableSectionColumnSelector from './TableSectionColumnSelector';
 import TableSectionCharacters from './TableSectionCharacters';
-import {
-  filterBySection,
-  getMaxRowAndColumn,
-} from '@/utilities/kanaTableCharacters';
+import { filterBySection } from '@/utilities/kanaTableCharacters';
 import { TableSection } from '@/types/KanaCharacter';
 
 const TableSection = ({ kanaTableCharactersArray }: TableSectionProps) => {
@@ -20,22 +17,12 @@ const TableSection = ({ kanaTableCharactersArray }: TableSectionProps) => {
     [tableSection, kanaTableCharactersArray],
   );
 
-  const [maxRowArray, maxColumnArray] = useMemo((): [null[], null[]] => {
-    const [maxRow, maxColumn] = getMaxRowAndColumn(tableSectionCharacters);
-
-    return [Array(maxRow + 1).fill(null), Array(maxColumn + 1).fill(null)];
-  }, [tableSectionCharacters]);
-
   return (
     <div className="overflow-x-scroll mt-4 pb-1.5">
       <table className="w-full">
         <tbody>
-          <TableSectionCharacters
-            characters={tableSectionCharacters}
-            rowInitializer={maxRowArray}
-            columnInitializer={maxColumnArray}
-          />
-          <TableSectionColumnSelector columnInitializer={maxColumnArray} />
+          <TableSectionCharacters characters={tableSectionCharacters} />
+          <TableSectionColumnSelector characters={tableSectionCharacters} />
         </tbody>
       </table>
     </div>

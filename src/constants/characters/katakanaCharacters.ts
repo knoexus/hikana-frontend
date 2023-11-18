@@ -332,70 +332,70 @@ export const katakanaCharactersObject: KanaCharactersMapping = {
     romaji: 'ga',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 0, column: 0 },
+      position: { row: 0, column: 1 },
     },
   },
   ギ: {
     romaji: 'gi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 1, column: 0 },
+      position: { row: 1, column: 1 },
     },
   },
   グ: {
     romaji: 'gu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 2, column: 0 },
+      position: { row: 2, column: 1 },
     },
   },
   ゲ: {
     romaji: 'ge',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 3, column: 0 },
+      position: { row: 3, column: 1 },
     },
   },
   ゴ: {
     romaji: 'go',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 4, column: 0 },
+      position: { row: 4, column: 1 },
     },
   },
   ザ: {
     romaji: 'za',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 0, column: 1 },
+      position: { row: 0, column: 2 },
     },
   },
   ジ: {
     romaji: 'ji',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 1, column: 1 },
+      position: { row: 1, column: 2 },
     },
   },
   ズ: {
     romaji: 'zu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 2, column: 1 },
+      position: { row: 2, column: 2 },
     },
   },
   ゼ: {
     romaji: 'ze',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 3, column: 1 },
+      position: { row: 3, column: 2 },
     },
   },
   ゾ: {
     romaji: 'zo',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 4, column: 1 },
+      position: { row: 4, column: 2 },
     },
   },
 
@@ -403,294 +403,294 @@ export const katakanaCharactersObject: KanaCharactersMapping = {
     romaji: 'da',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 0, column: 2 },
+      position: { row: 0, column: 3 },
     },
   },
   ヂ: {
     romaji: 'ji',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 1, column: 2 },
+      position: { row: 1, column: 3 },
     },
   },
   ヅ: {
     romaji: 'zu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 2, column: 2 },
+      position: { row: 2, column: 3 },
     },
   },
   デ: {
     romaji: 'de',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 3, column: 2 },
+      position: { row: 3, column: 3 },
     },
   },
   ド: {
     romaji: 'do',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 4, column: 2 },
+      position: { row: 4, column: 3 },
     },
   },
   バ: {
     romaji: 'ba',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 0, column: 3 },
+      position: { row: 0, column: 5 },
     },
   },
   ビ: {
     romaji: 'bi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 1, column: 3 },
+      position: { row: 1, column: 5 },
     },
   },
   ブ: {
     romaji: 'bu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 2, column: 3 },
+      position: { row: 2, column: 5 },
     },
   },
   ベ: {
     romaji: 'be',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 3, column: 3 },
+      position: { row: 3, column: 5 },
     },
   },
   ボ: {
     romaji: 'bo',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 4, column: 3 },
+      position: { row: 4, column: 5 },
     },
   },
   パ: {
     romaji: 'pa',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 0, column: 4 },
+      position: { row: 0, column: 6 },
     },
   },
   ピ: {
     romaji: 'pi',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 1, column: 4 },
+      position: { row: 1, column: 6 },
     },
   },
   プ: {
     romaji: 'pu',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 2, column: 4 },
+      position: { row: 2, column: 6 },
     },
   },
   ペ: {
     romaji: 'pe',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 3, column: 4 },
+      position: { row: 3, column: 6 },
     },
   },
   ポ: {
     romaji: 'po',
     tableProps: {
       section: 'Base Dakuten / Handakuten',
-      position: { row: 4, column: 4 },
+      position: { row: 4, column: 6 },
     },
   },
   キャ: {
     romaji: 'kya',
-    tableProps: { section: 'Double', position: { row: 0, column: 0 } },
+    tableProps: { section: 'Double', position: { row: 0, column: 1 } },
   },
   シャ: {
     romaji: 'sha',
-    tableProps: { section: 'Double', position: { row: 0, column: 1 } },
+    tableProps: { section: 'Double', position: { row: 0, column: 2 } },
   },
   チャ: {
     romaji: 'cha',
-    tableProps: { section: 'Double', position: { row: 0, column: 2 } },
+    tableProps: { section: 'Double', position: { row: 0, column: 3 } },
   },
   ニャ: {
     romaji: 'nya',
-    tableProps: { section: 'Double', position: { row: 0, column: 3 } },
+    tableProps: { section: 'Double', position: { row: 0, column: 4 } },
   },
   ヒャ: {
     romaji: 'hya',
-    tableProps: { section: 'Double', position: { row: 0, column: 4 } },
+    tableProps: { section: 'Double', position: { row: 0, column: 5 } },
   },
   ミャ: {
     romaji: 'mya',
-    tableProps: { section: 'Double', position: { row: 0, column: 5 } },
+    tableProps: { section: 'Double', position: { row: 0, column: 6 } },
   },
   リャ: {
     romaji: 'rya',
-    tableProps: { section: 'Double', position: { row: 0, column: 6 } },
+    tableProps: { section: 'Double', position: { row: 0, column: 8 } },
   },
   キュ: {
     romaji: 'kyu',
-    tableProps: { section: 'Double', position: { row: 1, column: 0 } },
+    tableProps: { section: 'Double', position: { row: 1, column: 1 } },
   },
   シュ: {
     romaji: 'shu',
-    tableProps: { section: 'Double', position: { row: 1, column: 1 } },
+    tableProps: { section: 'Double', position: { row: 1, column: 2 } },
   },
   チュ: {
     romaji: 'chu',
-    tableProps: { section: 'Double', position: { row: 1, column: 2 } },
+    tableProps: { section: 'Double', position: { row: 1, column: 3 } },
   },
   ニュ: {
     romaji: 'nyu',
-    tableProps: { section: 'Double', position: { row: 1, column: 3 } },
+    tableProps: { section: 'Double', position: { row: 1, column: 4 } },
   },
   ヒュ: {
     romaji: 'hyu',
-    tableProps: { section: 'Double', position: { row: 1, column: 4 } },
+    tableProps: { section: 'Double', position: { row: 1, column: 5 } },
   },
   ミュ: {
     romaji: 'myu',
-    tableProps: { section: 'Double', position: { row: 1, column: 5 } },
+    tableProps: { section: 'Double', position: { row: 1, column: 6 } },
   },
   リュ: {
     romaji: 'ryu',
-    tableProps: { section: 'Double', position: { row: 1, column: 6 } },
+    tableProps: { section: 'Double', position: { row: 1, column: 8 } },
   },
   キョ: {
     romaji: 'kyo',
-    tableProps: { section: 'Double', position: { row: 2, column: 0 } },
+    tableProps: { section: 'Double', position: { row: 2, column: 1 } },
   },
   ショ: {
     romaji: 'sho',
-    tableProps: { section: 'Double', position: { row: 2, column: 1 } },
+    tableProps: { section: 'Double', position: { row: 2, column: 2 } },
   },
   チョ: {
     romaji: 'cho',
-    tableProps: { section: 'Double', position: { row: 2, column: 2 } },
+    tableProps: { section: 'Double', position: { row: 2, column: 3 } },
   },
   ニョ: {
     romaji: 'nyo',
-    tableProps: { section: 'Double', position: { row: 2, column: 3 } },
+    tableProps: { section: 'Double', position: { row: 2, column: 4 } },
   },
   ヒョ: {
     romaji: 'hyo',
-    tableProps: { section: 'Double', position: { row: 2, column: 4 } },
+    tableProps: { section: 'Double', position: { row: 2, column: 5 } },
   },
   ミョ: {
     romaji: 'myo',
-    tableProps: { section: 'Double', position: { row: 2, column: 5 } },
+    tableProps: { section: 'Double', position: { row: 2, column: 6 } },
   },
   リョ: {
     romaji: 'ryo',
-    tableProps: { section: 'Double', position: { row: 2, column: 6 } },
+    tableProps: { section: 'Double', position: { row: 2, column: 8 } },
   },
   ギャ: {
     romaji: 'gya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 0, column: 0 },
+      position: { row: 0, column: 1 },
     },
   },
   ジャ: {
     romaji: 'ja',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 0, column: 1 },
+      position: { row: 0, column: 2 },
     },
   },
   ヂャ: {
     romaji: 'ja',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 0, column: 2 },
+      position: { row: 0, column: 3 },
     },
   },
   ビャ: {
     romaji: 'bya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 0, column: 3 },
+      position: { row: 0, column: 5 },
     },
   },
   ピャ: {
     romaji: 'pya',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 0, column: 4 },
+      position: { row: 0, column: 6 },
     },
   },
   ギュ: {
     romaji: 'gyu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 1, column: 0 },
+      position: { row: 1, column: 1 },
     },
   },
   ジュ: {
     romaji: 'ju',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 1, column: 1 },
+      position: { row: 1, column: 2 },
     },
   },
   ヂュ: {
     romaji: 'ju',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 1, column: 2 },
+      position: { row: 1, column: 3 },
     },
   },
   ビュ: {
     romaji: 'byu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 1, column: 3 },
+      position: { row: 1, column: 5 },
     },
   },
   ピュ: {
     romaji: 'pyu',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 1, column: 4 },
+      position: { row: 1, column: 6 },
     },
   },
   ギョ: {
     romaji: 'gyo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 2, column: 0 },
+      position: { row: 2, column: 1 },
     },
   },
   ジョ: {
     romaji: 'jo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 2, column: 1 },
+      position: { row: 2, column: 2 },
     },
   },
   ヂョ: {
     romaji: 'jo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 2, column: 2 },
+      position: { row: 2, column: 3 },
     },
   },
   ビョ: {
     romaji: 'byo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 2, column: 3 },
+      position: { row: 2, column: 5 },
     },
   },
   ピョ: {
     romaji: 'pyo',
     tableProps: {
       section: 'Double Dakuten / Handakuten',
-      position: { row: 2, column: 4 },
+      position: { row: 2, column: 6 },
     },
   },
   イェ: {

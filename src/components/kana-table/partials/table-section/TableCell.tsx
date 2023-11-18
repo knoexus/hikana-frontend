@@ -21,16 +21,18 @@ const TableCell = ({
 
   return (
     <td className="p-1">
-      {character && (
-        <div
-          className={`flex flex-col p-2 overflow-hidden min-w-[56px] ${
-            isSelectedCharacter(column) ? 'bg-violet-300' : 'bg-white'
-          } bg-opacity-50 border rounded-xl`}
-        >
-          <div className="text-center">{character.kana}</div>
-          <div className="text-center bg-teal-100">{character.romaji}</div>
-        </div>
-      )}
+      <div className="min-w-[56px]">
+        {character && (
+          <div
+            className={`p-2 flex flex-col overflow-hidden bg-opacity-50 border rounded-xl ${
+              isSelectedCharacter(column) ? 'bg-violet-300' : 'bg-white'
+            }`}
+          >
+            <div className="text-center">{character.kana}</div>
+            <div className="text-center bg-teal-100">{character.romaji}</div>
+          </div>
+        )}
+      </div>
     </td>
   );
 };

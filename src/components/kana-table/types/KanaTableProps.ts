@@ -9,9 +9,3 @@ export type TableSectionProps = {
 };
 
 export type KanaTableProps = TableSectionTogglerProps & TableSectionProps;
-
-export type TableSectionCharactersProps = {
-  rowInitializer: null[];
-  columnInitializer: null[];
-  characters: KanaTableCharacter[];
-};
