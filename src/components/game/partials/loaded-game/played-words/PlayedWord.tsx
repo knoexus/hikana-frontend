@@ -31,7 +31,7 @@ const PlayedWord = ({ word, guess }: { word: Word; guess: Guess }) => {
         onClick={() => setIsModalVisible(true)}
         className={`${
           guess.wasCorrect ? 'bg-green-500' : 'bg-red-500'
-        } border rounded-xl p-2 mx-1 cursor-pointer min-w-[120px] animate-gelatine-finite`}
+        } border rounded-xl p-2 mx-1 cursor-pointer min-w-[120px] animate-gelatine-finite break-words`}
       >
         <div>{word.kana}</div>
         <div>
