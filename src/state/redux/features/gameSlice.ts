@@ -10,6 +10,7 @@ export interface Guess {
 
 interface State {
   isOn: boolean;
+  isOver: boolean;
   currentWordIndex: number;
   currentWordInput: string;
   isCurrentWordInputCorrect: boolean;
@@ -21,6 +22,7 @@ interface State {
 
 const initialState: State = {
   isOn: false,
+  isOver: false,
   currentWordIndex: 0,
   currentWordInput: '',
   isCurrentWordInputCorrect: false,
@@ -36,6 +38,9 @@ export const game = createSlice({
   reducers: {
     setGameIsOn: (state, action: PayloadAction<boolean>) => {
       state.isOn = action.payload;
+    },
+    setGameIsOver: (state, action: PayloadAction<boolean>) => {
+      state.isOver = action.payload;
     },
     incrementCurrentWordIndex: (state) => {
       state.currentWordIndex = state.currentWordIndex + 1;
@@ -68,9 +73,9 @@ export const game = createSlice({
   },
 });
 
-export const proceedToNextWord =
-  (): ThunkAction<void, RootState, unknown, Action<unknown>> =>
-  (dispatch, getState) => {
+export const preProceedToNextWord =
+  (): ThunkAction<boolean, RootState, unknown, Action<unknown>> =>
+  (dispatch, getState): boolean => {
     const state = getState();
     const words = getAllWordsCacheSelector(state);
     const { currentWordIndex, currentWordInput, retriesForCurrentWord } =
@@ -83,7 +88,7 @@ export const proceedToNextWord =
     if (!isCurrentWordInputCorrect) {
       if (doWordGuessRetries && retriesForCurrentWord > 0) {
         dispatch(game.actions.decrementRetriesForCurrentWord());
-        return;
+        return true;
       }
       dispatch(game.actions.incrementIncorrectGuessesCount());
     } else {
@@ -95,15 +100,37 @@ export const proceedToNextWord =
         wasCorrect: isCurrentWordInputCorrect,
       }),
     );
-    dispatch(game.actions.incrementCurrentWordIndex());
     dispatch(game.actions.resetCurrentWordInput());
     dispatch(game.actions.resetRetriesForCurrentWord());
+    return false;
+  };
+
+export const proceedToNextWord =
+  (): ThunkAction<void, RootState, unknown, Action<unknown>> => (dispatch) => {
+    const wasWordRetryUsed = dispatch(preProceedToNextWord());
+    if (!wasWordRetryUsed) {
+      dispatch(game.actions.incrementCurrentWordIndex());
+    }
+  };
+
+export const finishGame =
+  (): ThunkAction<void, RootState, unknown, Action<unknown>> => (dispatch) => {
+    const wasWordRetryUsed = dispatch(preProceedToNextWord());
+    if (!wasWordRetryUsed) {
+      dispatch(game.actions.setGameIsOver(true));
+    }
   };
 
 export const resetGameState =
   (): ThunkAction<void, RootState, unknown, Action<unknown>> => (dispatch) => {
     dispatch(game.actions.reset());
     dispatch(hikanaApi.util.resetApiState());
+  };
+
+export const restartGame =
+  (): ThunkAction<void, RootState, unknown, Action<unknown>> => (dispatch) => {
+    dispatch(resetGameState());
+    dispatch(setGameIsOn(true));
   };
 
 export const {

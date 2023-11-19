@@ -1,21 +1,22 @@
 import WordCounter from './word-counter/WordCounter';
-import NextWordButton from './next-word-button/NextWordButton';
 import KanaWord from './kana-word/KanaWord';
 import RomajiInput from './romaji-input/RomajiInput';
 import PlayedWords from './played-words/PlayedWords';
 import WordRetryLives from './word-retry-lives/WordRetryLives';
+import ProceedButton from './proceed-button/ProceedButton';
+import FullDimContainer from '@/components/common/FullDimContainer';
 
 const LoadedGame = () => (
-  <div className="w-full flex flex-col justify-center items-center">
-    <div className="container mt-5 p-4 border rounded-2xl flex flex-col w-96 justify-center items-center relative">
+  <FullDimContainer extraClasses="flex flex-col justify-center items-center">
+    <div className="container p-4 border rounded-2xl flex flex-col w-96 justify-center items-center relative">
       <WordCounter />
       <WordRetryLives />
       <KanaWord />
       <RomajiInput />
-      <NextWordButton />
+      <ProceedButton />
     </div>
     <PlayedWords />
-  </div>
+  </FullDimContainer>
 );
 
 export default LoadedGame;

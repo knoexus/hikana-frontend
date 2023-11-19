@@ -4,11 +4,16 @@ import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
 import {
   setCurrentWordInput,
   proceedToNextWord,
+  finishGame,
 } from '@/state/redux/features/gameSlice';
+import { useWords } from '@/components/game/context/WordsContext';
 
 const RomajiInput = () => {
   const dispatch = useAppDispatch();
-  const { currentWordInput } = useAppSelector((state) => state.gameReducer);
+  const totalWordsCount = useWords().length;
+  const { currentWordInput, currentWordIndex } = useAppSelector(
+    (state) => state.gameReducer,
+  );
 
   const handleInputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -17,7 +22,11 @@ const RomajiInput = () => {
 
   const handleInputOnKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      dispatch(proceedToNextWord());
+      if (currentWordIndex !== totalWordsCount - 1) {
+        dispatch(proceedToNextWord());
+      } else {
+        dispatch(finishGame());
+      }
     }
   };
 
