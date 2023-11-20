@@ -1,5 +1,5 @@
 const Loading = () => (
-  <div className="absolute top-1/2 left-1/2">
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2">
     <svg
       aria-hidden="true"
       className="inline w-20 h-20 mr-2 text-gray-200 animate-spin fill-blue-400"
