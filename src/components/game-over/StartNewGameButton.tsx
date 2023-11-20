@@ -1,16 +1,19 @@
 import { restartGame } from '@/state/redux/features/gameSlice';
 import useAppDispatch from '@/state/redux/hooks/useAppDispatch';
-import { MouseEvent } from 'react';
+import { MouseEvent, useCallback } from 'react';
 import OutlineButton from '../common/OutlineButton';
 
 const StartNewGameButton = () => {
   const dispatch = useAppDispatch();
-  const handleOnClick = (
-    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
-  ) => {
-    e.preventDefault();
-    dispatch(restartGame());
-  };
+
+  const handleOnClick = useCallback(
+    (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>): void => {
+      e.preventDefault();
+      dispatch(restartGame());
+    },
+    [dispatch],
+  );
+
   return (
     <OutlineButton
       onClick={handleOnClick}

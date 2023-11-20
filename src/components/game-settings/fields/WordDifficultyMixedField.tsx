@@ -6,6 +6,7 @@ import {
   setWordDifficultyLevel,
   DifficultyLevel,
 } from '@/state/redux/features/gameSettingsSlice';
+import { useCallback } from 'react';
 
 const WordDifficultyMixedField = () => {
   const { doCustomLevel, level, levelSelectOptions } = useAppSelector(
@@ -13,13 +14,16 @@ const WordDifficultyMixedField = () => {
   );
   const dispatch = useAppDispatch();
 
-  const handleBooleanFieldOnChange = () => {
+  const handleBooleanFieldOnChange = useCallback(() => {
     dispatch(toggleDoCustomWordDifficultyLevel());
-  };
+  }, [dispatch]);
 
-  const handleNumericFieldOnChange = (newDifficultyLevel: string) => {
-    dispatch(setWordDifficultyLevel(newDifficultyLevel as DifficultyLevel));
-  };
+  const handleNumericFieldOnChange = useCallback(
+    (newDifficultyLevel: string) => {
+      dispatch(setWordDifficultyLevel(newDifficultyLevel as DifficultyLevel));
+    },
+    [dispatch],
+  );
 
   return (
     <OptionalSelectorField

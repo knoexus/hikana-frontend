@@ -4,11 +4,21 @@ import Modal from '@/components/common/Modal';
 import WordBreakdown from './WordBreakdown';
 import { Guess } from '@/state/redux/features/gameSlice';
 import { Word } from '@/types/Word';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const PlayedWord = ({ word, guess }: { word: Word; guess: Guess }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const enableModalVisibility = useCallback(
+    (): void => setIsModalVisible(true),
+    [setIsModalVisible],
+  );
+
+  const disableModalVisibility = useCallback(
+    (): void => setIsModalVisible(false),
+    [setIsModalVisible],
+  );
 
   // When a new PlayWord is added, don't let it stay unfocused.
   useEffect(() => {
@@ -22,13 +32,13 @@ const PlayedWord = ({ word, guess }: { word: Word; guess: Guess }) => {
       <Modal
         isVisible={isModalVisible}
         title="Word Breakdown"
-        onClose={() => setIsModalVisible(false)}
+        onClose={disableModalVisibility}
       >
         <WordBreakdown word={word} />
       </Modal>
       <div
         ref={ref}
-        onClick={() => setIsModalVisible(true)}
+        onClick={enableModalVisibility}
         className={`${
           guess.wasCorrect ? 'bg-green-500' : 'bg-red-500'
         } border rounded-xl p-2 mx-1 cursor-pointer min-w-[120px] animate-gelatine-finite break-words`}

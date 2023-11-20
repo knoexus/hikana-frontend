@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 interface BooleanToggleFieldProps {
   name: string;
   value: boolean;
@@ -26,4 +28,4 @@ const BooleanToggleField = ({
   );
 };
 
-export default BooleanToggleField;
+export default memo(BooleanToggleField);

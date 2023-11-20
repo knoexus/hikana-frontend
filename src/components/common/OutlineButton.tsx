@@ -1,5 +1,5 @@
 import { TailwindComponentProps } from '@/types/TailwindComponentProps';
-import { MouseEvent } from 'react';
+import { MouseEvent, memo } from 'react';
 
 type OutlineButtonType = 'success' | 'info' | 'danger';
 
@@ -34,4 +34,4 @@ const OutlineButton = ({
   </button>
 );
 
-export default OutlineButton;
+export default memo(OutlineButton);

@@ -1,6 +1,7 @@
 import BooleanToggleField from './BooleanToggleField';
 import NestedFields from './NestedFields';
 import SelectorField from './SelectorField';
+import { memo } from 'react';
 
 interface NameValue<T> {
   name: string;
@@ -58,4 +59,4 @@ const OptionalNumericRangeSliderField = ({
   );
 };
 
-export default OptionalNumericRangeSliderField;
+export default memo(OptionalNumericRangeSliderField);

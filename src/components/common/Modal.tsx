@@ -1,7 +1,7 @@
 'use client';
 
 import { useOutsideClickResolver } from '@/utilities/hooks/useOutsideClickResolver';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, memo } from 'react';
 
 const Modal = ({
   isVisible,
@@ -66,4 +66,4 @@ const Modal = ({
   );
 };
 
-export default Modal;
+export default memo(Modal);
