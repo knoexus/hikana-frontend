@@ -3,6 +3,8 @@ import BackToGameParamsButton from './BackToGameParamsButton';
 import useAppSelector from '@/state/redux/hooks/useAppSelector';
 import { getEmojiReaction } from '@/utilities/reaction';
 import { Rampart_One } from 'next/font/google';
+import GameResultButton from './GameResultsButton';
+import ResultsButton from './ResultsButton';
 
 const rampartOne = Rampart_One({
   weight: '400',
@@ -29,7 +31,11 @@ const GameOver = () => {
           Score: {`${correctGuessesCount}/${totalWordsCount}`}
         </span>
       </div>
-      <div className="flex flex-col [&>*:not(:first-child)]:mt-4">
+      <div className="flex flex-col [&>*:not(:first-child)]:mt-4 w-10/12 sm:w-[320px]">
+        <div className="flex flex-row justify-between [&>*]:w-[48%]">
+          <GameResultButton />
+          <ResultsButton />
+        </div>
         <StartNewGameButton />
         <BackToGameParamsButton />
       </div>
